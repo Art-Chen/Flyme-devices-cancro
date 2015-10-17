@@ -1,0 +1,16 @@
+#import /init.qcom.usb.rc
+
+on init
+    write /sys/class/leds/lcd-backlight/brightness 100
+    
+    write /sys/devices/platform/msm_hsusb/gadget/lun0/ro 0
+    
+    write /sys/class/android_usb/android0/iManufacturer "Xiaomi"
+    write /sys/class/android_usb/android0/iProduct "MI 4"
+        
+    #setprop usb.vendor "19d2"
+    #setprop usb.product.mtpadb "0245"
+    
+
+
+
