@@ -9,6 +9,7 @@ ro.build.version.codename=REL
 ro.build.version.all_codenames=REL
 ro.build.version.release=5.1.1
 ro.build.version.security_patch=2015-10-01
+ro.product.device=cancro
 ro.build.version.base_os=
 ro.build.date=Thu Oct 15 17:10:06 PDT 2015
 ro.build.date.utc=1444954206
