@@ -8660,7 +8660,7 @@
     .line 744
     const-string v5, "stay_on_while_plugged_in"
 
-    invoke-static {v4, v5, v7}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v4, v5, v6}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v5
 
@@ -8835,7 +8835,7 @@
 
     const/16 v6, 0x1388
 
-    invoke-static {v4, v5, v6, v9}, Lcyanogenmod/providers/CMSettings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v4, v5, v6, v9}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v5
 
@@ -8846,7 +8846,7 @@
 
     iget v6, p0, Lcom/android/server/power/PowerManagerService;->mButtonBrightnessSettingDefault:I
 
-    invoke-static {v4, v5, v6, v9}, Lcyanogenmod/providers/CMSettings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v4, v5, v6, v9}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v5
 
@@ -8857,7 +8857,7 @@
 
     iget v6, p0, Lcom/android/server/power/PowerManagerService;->mKeyboardBrightnessSettingDefault:I
 
-    invoke-static {v4, v5, v6, v9}, Lcyanogenmod/providers/CMSettings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v4, v5, v6, v9}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v5
 
@@ -11290,7 +11290,7 @@
     .line 649
     const-string v0, "button_brightness"
 
-    invoke-static {v0}, Lcyanogenmod/providers/CMSettings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
@@ -11305,7 +11305,7 @@
     .line 652
     const-string v0, "keyboard_brightness"
 
-    invoke-static {v0}, Lcyanogenmod/providers/CMSettings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
@@ -11320,7 +11320,7 @@
     .line 655
     const-string v0, "button_backlight_timeout"
 
-    invoke-static {v0}, Lcyanogenmod/providers/CMSettings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
