@@ -108,70 +108,58 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 6441
     packed-switch p0, :pswitch_data_0
 
-    .line 6451
-    const v0, 0x104042e
+    const v0, #android:string@imProtocolCustom#t
 
     :goto_0
     return v0
 
-    .line 6442
     :pswitch_0
-    const v0, 0x104042f
+    const v0, #android:string@imProtocolAim#t
 
     goto :goto_0
 
-    .line 6443
     :pswitch_1
-    const v0, 0x1040430
+    const v0, #android:string@imProtocolMsn#t
 
     goto :goto_0
 
-    .line 6444
     :pswitch_2
-    const v0, 0x1040431
+    const v0, #android:string@imProtocolYahoo#t
 
     goto :goto_0
 
-    .line 6445
     :pswitch_3
-    const v0, 0x1040432
+    const v0, #android:string@imProtocolSkype#t
 
     goto :goto_0
 
-    .line 6446
     :pswitch_4
-    const v0, 0x1040433
+    const v0, #android:string@imProtocolQq#t
 
     goto :goto_0
 
-    .line 6447
     :pswitch_5
-    const v0, 0x1040434
+    const v0, #android:string@imProtocolGoogleTalk#t
 
     goto :goto_0
 
-    .line 6448
     :pswitch_6
-    const v0, 0x1040435
+    const v0, #android:string@imProtocolIcq#t
 
     goto :goto_0
 
-    .line 6449
     :pswitch_7
-    const v0, 0x1040436
+    const v0, #android:string@imProtocolJabber#t
 
     goto :goto_0
 
-    .line 6450
     :pswitch_8
-    const v0, 0x1040437
+    const v0, #android:string@imProtocolNetMeeting#t
 
     goto :goto_0
 
-    .line 6441
     nop
 
     :pswitch_data_0
@@ -230,34 +218,28 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 6413
     packed-switch p0, :pswitch_data_0
 
-    .line 6417
-    const v0, 0x104042a
+    const v0, #android:string@imTypeCustom#t
 
     :goto_0
     return v0
 
-    .line 6414
     :pswitch_0
-    const v0, 0x104042b
+    const v0, #android:string@imTypeHome#t
 
     goto :goto_0
 
-    .line 6415
     :pswitch_1
-    const v0, 0x104042c
+    const v0, #android:string@imTypeWork#t
 
     goto :goto_0
 
-    .line 6416
     :pswitch_2
-    const v0, 0x104042d
+    const v0, #android:string@imTypeOther#t
 
     goto :goto_0
 
-    .line 6413
     nop
 
     :pswitch_data_0

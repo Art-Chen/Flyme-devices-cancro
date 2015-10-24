@@ -88,7 +88,7 @@
     .param p0, "type"    # Ljava/lang/Integer;
 
     .prologue
-    const v0, 0x1040420
+    const v0, #android:string@eventTypeOther#t
 
     .line 6840
     if-nez p0, :cond_0
@@ -106,24 +106,20 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 6848
-    const v0, 0x104041d
+    const v0, #android:string@eventTypeCustom#t
 
     goto :goto_0
 
-    .line 6845
     :pswitch_1
-    const v0, 0x104041f
+    const v0, #android:string@eventTypeAnniversary#t
 
     goto :goto_0
 
-    .line 6846
     :pswitch_2
-    const v0, 0x104041e
+    const v0, #android:string@eventTypeBirthday#t
 
     goto :goto_0
 
-    .line 6843
     nop
 
     :pswitch_data_0
