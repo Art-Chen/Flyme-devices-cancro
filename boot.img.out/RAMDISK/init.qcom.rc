@@ -58,9 +58,6 @@ on init
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-#Symlink from the system to the data folder
-    symlink /data/sys-priv-app /system/priv-app
-    symlink /data/sys-fonts /system/fonts 
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB

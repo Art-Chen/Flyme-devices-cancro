@@ -45,6 +45,10 @@ on init
     # but someday that may change.
     symlink /system/vendor /vendor
 
+    #Symlink from the system to the data folder
+    symlink /data/sys-priv-app /system/priv-app
+    symlink /data/sys-fonts /system/fonts
+
     # Create cgroup mount point for cpu accounting
     mkdir /acct
     mount cgroup none /acct cpuacct

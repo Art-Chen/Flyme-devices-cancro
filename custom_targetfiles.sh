@@ -9,14 +9,14 @@ rm -rf DATA/
 echo "create dir DATA/"
 mkdir -vp DATA/
 echo "move some app into data"
-mkdir -vp $OUT_DIR/DATA/sys-priv-app
+mkdir -vp $OUT_DIR/DATA/sys-priv-app/IflytekSpeechService
 #mkdir -vp $FLYME_DIR/app/Painter
 #mkdir -vp $FLYME_DIR/app/Life
 #mkdir -vp $FLYME_DIR/app/Video
 #mkdir -vp $FLYME_DIR/app/MzInput
 #mkdir -vp $FLYME_DIR/app/Music
 #mkdir -vp $FLYME_DIR/app
-#mv -vf $OUT_DIR/SYSTEM/app/IflytekSpeechService/ $OUT_DIR/DATA/sys-priv-app/
+mv -vf $OUT_DIR/SYSTEM/app/IflytekSpeechService/ $OUT_DIR/DATA/sys-priv-app/
 #mv -vf $OUT_DIR/SYSTEM/app/Painter/ $OUT_DIR/DATA/sys-priv-app
 #mv -vf $OUT_DIR/SYSTEM/priv-app/Life/ $FLYME_DIR/app/
 #mv -vf $OUT_DIR/SYSTEM/priv-app/Video/ $FLYME_DIR/app/
