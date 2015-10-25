@@ -25,3 +25,4 @@ mv -vf $OUT_DIR/SYSTEM/app/IflytekSpeechService/ $OUT_DIR/DATA/sys-priv-app/
 mv -vf $OUT_DIR/SYSTEM/priv-app/* $OUT_DIR/DATA/sys-priv-app
 echo "move system font into data"
 mv -vf $OUT_DIR/SYSTEM/fonts/ $OUT_DIR/DATA/sys-fonts
+
