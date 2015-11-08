@@ -40,7 +40,7 @@ vendor_modify_images := boot
 # The default value is app or pri-app which not need to configure.
 # You can configure the directory name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-vendor_remove_dirs := addon.d
+#vendor_remove_dirs := addon.d
 
 ##############################################################################
 # The value decides the file which you want to remove in the vendor directory for the ota package.
@@ -56,7 +56,7 @@ vendor_remove_dirs := addon.d
 #-----------------------------------------------------------------------------
 vendor_saved_apps := Bluetooth KeyChain HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
                      FusedLocation PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
-                     ProxyHandler Shell DefaultContainerService
+                     ProxyHandler Shell DefaultContainerService QuickBoot
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -65,7 +65,7 @@ vendor_saved_apps := Bluetooth KeyChain HTMLViewer UserDictionaryProvider Backup
 # You need ro decode FMRadio.apk to the project directory(use apktool d FMRadio.apk) first,
 # and then you can make it by:   make FMRadio
 #-----------------------------------------------------------------------------
-#vendor_modify_apps := FMRadio
+#vendor_modify_apps := DeviceOriginalSettings
 
 ##############################################################################
 # The value decides which vendor jar you want to modify.

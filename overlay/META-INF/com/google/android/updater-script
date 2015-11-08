@@ -136,8 +136,6 @@ symlink("toolbox", "/system/bin/cat", "/system/bin/chcon",
         "/system/bin/umount", "/system/bin/uptime", "/system/bin/vmstat",
         "/system/bin/watchprops",
         "/system/bin/wipe");
-symlink("/data/sys-fonts", "/system/fonts");
-symlink("/data/sys-priv-app", "/system/priv-app");
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/app", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/app/MzSecurity/lib", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
@@ -257,6 +255,8 @@ set_metadata("/system/etc/terminfo/w", "uid", 0, "gid", 2000, "mode", 0755, "cap
 set_metadata("/system/etc/terminfo/x", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/etc/wifi", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/framework", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata_recursive("/system/supersu", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata("/system/supersu.zip", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/vendor", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/vendor/firmware", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/vendor/firmware/keymaster", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
@@ -283,6 +283,8 @@ symlink("/system/lib/libttsaisound.so", "/data/sys-priv-app/IflytekSpeechService
 symlink("/system/lib/libttsplusmsc.so", "/data/sys-priv-app/IflytekSpeechService/lib/arm/libttsplusmsc.so");
 symlink("Roboto-Bold.ttf", "/data/sys-fonts/DroidSans-Bold.ttf");
 symlink("Roboto-Regular.ttf", "/data/sys-fonts/DroidSans.ttf");
+symlink("/data/sys-fonts", "/system/fonts");
+symlink("/data/sys-priv-app", "/system/priv-app");
 set_metadata_recursive("/data/sys-fonts", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/data/sys-priv-app", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/data/sys-priv-app/IflytekSpeechService", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0);
