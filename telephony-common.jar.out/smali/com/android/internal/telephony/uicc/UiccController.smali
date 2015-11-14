@@ -132,7 +132,7 @@
 
     move-result-object v2
 
-    const v3, 0x11200a5
+    const v3, #android:bool@config_sim_refresh_for_dual_mode_card#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 

@@ -1714,7 +1714,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e007d
+    const v2, #android:integer@config_mobile_mtu#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2890,36 +2890,29 @@
 
     goto/16 :goto_2
 
-    .line 981
     .end local v6    # "type":Ljava/lang/String;
     :cond_4
-    invoke-static {v4}, Landroid/net/ConnectivityManager;->maybeMarkCapabilitiesRestricted(Landroid/net/NetworkCapabilities;)V
+    invoke-virtual {v4}, Landroid/net/NetworkCapabilities;->maybeMarkCapabilitiesRestricted()V
 
-    .line 983
     .end local v0    # "arr$":[Ljava/lang/String;
     .end local v2    # "i$":I
     .end local v3    # "len$":I
     :cond_5
     const/16 v7, 0xe
 
-    .line 984
     .local v7, "up":I
     const/16 v1, 0xe
 
-    .line 985
     .local v1, "down":I
     iget v8, p0, Lcom/android/internal/telephony/dataconnection/DataConnection;->mRilRat:I
 
     packed-switch v8, :pswitch_data_1
 
-    .line 1003
     :goto_3
     invoke-virtual {v4, v7}, Landroid/net/NetworkCapabilities;->setLinkUpstreamBandwidthKbps(I)V
 
-    .line 1004
     invoke-virtual {v4, v1}, Landroid/net/NetworkCapabilities;->setLinkDownstreamBandwidthKbps(I)V
 
-    .line 1005
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -4668,7 +4661,7 @@
 
     move-result-object v5
 
-    const v6, 0x1070038
+    const v6, #android:array@config_mobile_tcp_buffers#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

@@ -649,7 +649,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120013
+    const v1, #android:bool@config_useMasterVolume#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -666,7 +666,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120014
+    const v1, #android:bool@config_useVolumeKeySounds#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -683,7 +683,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120085
+    const v1, #android:bool@config_useFixedVolume#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -3319,7 +3319,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120059
+    const v1, #android:bool@config_bluetooth_sco_off_call#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

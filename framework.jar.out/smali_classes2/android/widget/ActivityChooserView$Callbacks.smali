@@ -133,7 +133,7 @@
 
     move-result-object v3
 
-    const v4, 0x104066e
+    const v4, #android:string@activitychooserview_choose_application_error#t
 
     const/4 v5, 0x1
 

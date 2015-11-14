@@ -77,7 +77,7 @@
 
     move-result-object v5
 
-    const v6, 0x1070051
+    const v6, #android:array@config_auto_perf_activities#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -163,7 +163,7 @@
 
     move-result-object v5
 
-    const v6, 0x104011a
+    const v6, #android:string@config_perf_profile_default_entry#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -176,7 +176,7 @@
 
     move-result-object v5
 
-    const v6, 0x1040119
+    const v6, #android:string@config_perf_profile_prop#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

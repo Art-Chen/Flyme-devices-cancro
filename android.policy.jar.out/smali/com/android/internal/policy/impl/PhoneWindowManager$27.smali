@@ -70,10 +70,8 @@
 
     if-eqz v2, :cond_1
 
-    .line 6642
-    const v1, 0x10304bf
+    const v1, #android:style@Theme.Micro.Dialog.Alert#t
 
-    .line 6650
     .local v1, "theme":I
     :goto_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$27;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -108,7 +106,7 @@
 
     iget-object v2, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mBootMsgDialog:Landroid/app/ProgressDialog;
 
-    const v3, 0x104056e
+    const v3, #android:string@android_upgrading_title#t
 
     invoke-virtual {v2, v3}, Landroid/app/ProgressDialog;->setTitle(I)V
 
@@ -245,13 +243,11 @@
 
     if-eqz v2, :cond_2
 
-    .line 6645
-    const v1, 0x10304a5
+    const v1, #android:style@Theme.Leanback.Dialog.Alert#t
 
     .restart local v1    # "theme":I
     goto/16 :goto_0
 
-    .line 6647
     .end local v1    # "theme":I
     :cond_2
     const/4 v1, 0x0
@@ -265,7 +261,7 @@
 
     iget-object v2, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mBootMsgDialog:Landroid/app/ProgressDialog;
 
-    const v3, 0x104056f
+    const v3, #android:string@android_start_title#t
 
     invoke-virtual {v2, v3}, Landroid/app/ProgressDialog;->setTitle(I)V
 

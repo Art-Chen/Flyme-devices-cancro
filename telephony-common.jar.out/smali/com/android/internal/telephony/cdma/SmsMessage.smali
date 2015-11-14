@@ -86,7 +86,7 @@
 
     .line 532
     .local v1, "r":Landroid/content/res/Resources;
-    const v2, 0x112009f
+    const v2, #android:bool@config_sms_force_7bit_encoding#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2618,29 +2618,24 @@
 
     const/16 v11, 0x1005
 
-    .line 978
     .local v11, "teleservice":I
     :goto_1
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v10
 
-    .line 979
     .local v10, "resource":Landroid/content/res/Resources;
     if-eqz v10, :cond_4
 
-    .line 980
-    const v12, 0x11200a0
+    const v12, #android:bool@config_ascii_7bit_support_for_long_message#t
 
     invoke-virtual {v10, v12}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v1
 
-    .line 982
     .local v1, "ascii7bitForLongMsg":Z
     if-eqz v1, :cond_4
 
-    .line 983
     const-string v12, "SmsMessage"
 
     new-instance v13, Ljava/lang/StringBuilder;

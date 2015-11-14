@@ -852,7 +852,7 @@
 
     .line 99
     .local v2, "parser":Landroid/content/res/XmlResourceParser;
-    const v3, 0x1110003
+    const v3, #android:xml@default_zen_mode_config#t
 
     :try_start_0
     invoke-virtual {p0, v3}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
@@ -1376,16 +1376,16 @@
 .end method
 
 .method public onSetRingerModeExternal(IILjava/lang/String;I)I
-    .locals 8
+    .locals 7
     .param p1, "ringerModeOld"    # I
     .param p2, "ringerModeNew"    # I
     .param p3, "caller"    # Ljava/lang/String;
     .param p4, "ringerModeInternal"    # I
 
     .prologue
-    const/4 v4, 0x1
-
     const/4 v5, 0x0
+
+    const/4 v4, 0x1
 
     .line 408
     move v3, p2
@@ -1458,26 +1458,12 @@
 
     if-nez v6, :cond_4
 
-    iget-object v6, p0, Lcom/android/server/notification/ZenModeHelper;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v6
-
-    const v7, 0x11200ae
-
-    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_4
-
     .line 419
     const/4 v2, 0x1
 
     .line 421
     :cond_4
-    if-nez v1, :cond_5
+    if-eqz v1, :cond_5
 
     move v3, v4
 
@@ -1485,30 +1471,23 @@
     goto :goto_2
 
     :cond_5
-    move v3, v5
+    const/4 v3, 0x2
 
     goto :goto_3
 
-    .line 424
     :cond_6
     move v3, p4
 
-    .line 426
     goto :goto_2
 
-    .line 429
     :pswitch_1
     iget v4, p0, Lcom/android/server/notification/ZenModeHelper;->mZenMode:I
 
     if-eqz v4, :cond_0
 
-    .line 430
     const/4 v2, 0x0
 
     goto :goto_2
-
-    .line 413
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

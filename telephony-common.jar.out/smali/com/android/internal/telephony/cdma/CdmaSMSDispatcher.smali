@@ -125,7 +125,7 @@
 
     move-result-object v5
 
-    const v7, 0x11200a0
+    const v7, #android:bool@config_ascii_7bit_support_for_long_message#t
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
 

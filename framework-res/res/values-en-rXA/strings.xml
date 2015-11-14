@@ -140,6 +140,8 @@
     <string name="perf_profile_pwrsv">[Þöŵéŕ šåVé one two]</string>
     <string name="perf_profile_bal">[βåļåñçéð one two]</string>
     <string name="perf_profile_perf">[Þéŕƒöŕḿåñçé one two]</string>
+    <string name="perf_profile_bias_power">[Éƒƒîçîéñçý one two]</string>
+    <string name="perf_profile_bias_perf">[qûîçķ one two]</string>
     <string name="theme_install_error_title">[Fåîļéð ţö îñšţåļļ ţĥéḿé one two three]</string>
     <string name="theme_install_error_message">[»%s« ƒåîļéð ţö îñšţåļļ one two three]</string>
     <string name="theme_reset_notification_title">[Ţĥéḿé ŕéšéţ one two]</string>
@@ -1157,7 +1159,7 @@
     <string name="autofill_shipping_designator_re">[šĥîþ one]</string>
     <string name="autofill_email_re">[é.¿ḿåîļ|メールアドレス|Электронной.¿Почты|邮件|邮箱|電郵地址 one two three four five six seven eight nine ten]</string>
     <string name="autofill_username_re">[ûšéŕ.¿ñåḿé|ûšéŕ.¿îð|Vöļļšţäñðîĝéŕ.¿ñåḿé|用户名 one two three four five]</string>
-    <string name="autofill_name_re">[^ñåḿé|ƒûļļ.¿ñåḿé|ýöûŕ.¿ñåḿé|çûšţöḿéŕ.¿ñåḿé|ƒîŕšţåñðļåšţñåḿé|ñöḿɓŕé.*ý.*åþéļļîðöš|^ñöḿ|お名前|氏名|^ñöḿé|姓名 one two three four five six seven eight nine ten eleven]</string>
+    <string name="autofill_name_re">[^ñåḿé|ƒûļļ.¿ñåḿé|ýöûŕ.¿ñåḿé|çûšţöḿéŕ.¿ñåḿé|ƒîŕšţåñðļåšţñåḿé|ñöḿɓŕé.*ý.*åþéļļîðöš|^ñöḿ|お名前|氏名|^ñöḿé|姓名 one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen]</string>
     <string name="autofill_name_specific_re">[^ñåḿé|^ñöḿ|^ñöḿé one two three]</string>
     <string name="autofill_first_name_re">[îŕšţ.*ñåḿé|îñîţîåļš|ƒñåḿé|ƒîŕšţ€|Vöŕñåḿé|ñöḿɓŕé|ƒöŕéñåḿé|þŕéñöḿ|þŕéñöḿ|名|ñöḿé|Имя one two three four five six seven eight nine]</string>
     <string name="autofill_middle_initial_re">[ḿîððļé.*îñîţîåļ|ḿ\\.î\\.|ḿî€ one two three four]</string>
@@ -1168,12 +1170,12 @@
     <string name="autofill_phone_prefix_re">[þŕéƒîх|þŕéšéļéçţîöñ|ððð one two three]</string>
     <string name="autofill_phone_suffix_re">[šûƒƒîх one two]</string>
     <string name="autofill_phone_extension_re">[éхţ|ŕåḿåļ one two]</string>
-    <string name="autofill_name_on_card_re">[çåŕð.¿ĥöļðéŕ|ñåḿé.¿öñ.¿çåŕð|ççñåḿé|öŵñéŕ|ķåŕţéñîñĥåɓéŕ|ñöḿɓŕé.*ţåŕĵéţå|ñöḿ.*çåŕţé|ñöḿé.*çåŕţ|名前|Имя.*карты|信用卡开户名|开户名|持卡人姓名|持卡人姓名 one two three four five six seven eight nine ten eleven twelve thirteen]</string>
+    <string name="autofill_name_on_card_re">[çåŕð.¿ĥöļðéŕ|ñåḿé.¿öñ.¿çåŕð|ççñåḿé|öŵñéŕ|ķåŕţéñîñĥåɓéŕ|ñöḿɓŕé.*ţåŕĵéţå|ñöḿ.*çåŕţé|ñöḿé.*çåŕţ|名前|Имя.*карты|信用卡开户名|开户名|持卡人姓名|持卡人姓名 one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen nineteen twenty one two]</string>
     <string name="autofill_name_on_card_contextual_re">[ñåḿé one]</string>
     <string name="autofill_card_cvc_re">[Véŕîƒîçåţîöñ|çåŕð îðéñţîƒîçåţîöñ|çVñ|šéçûŕîţý çöðé|çVV çöðé|çVç one two three four five six seven]</string>
     <string name="autofill_card_number_re">[ñûḿɓéŕ|çåŕð.¿#|çåŕð.¿ñö|ççñûḿ|ñûḿḿéŕ|çŕéðîţö|ñûḿéŕö|ñúḿéŕö|ñûḿéŕö|カード番号|Номер.*карты|信用卡号|信用卡号码|信用卡卡號 one two three four five six seven eight nine ten eleven]</string>
     <string name="autofill_expiration_month_re">[éхþîŕ|éхþ.*ḿöñţĥ|éхþ.*ðåţé|ççḿöñţĥ|ĝûéļţîĝ|ĝüļţîĝ|ḿöñåţ|ƒéçĥå|ðåţé.*éхþ|šçåðéñžå|有効期限|Våļîðåðé|Срок действия карты|月 one two three four five six seven eight nine ten eleven twelve]</string>
-    <string name="autofill_expiration_date_re">[éхþ|^/|ýéåŕ|åɓļåûƒðåţûḿ|ĝûéļţîĝ|ĝüļţîĝ|ýåĥŕ|ƒéçĥå|šçåðéñžå|有効期限|Våļîðåðé|Срок действия карты|年|有效期 one two three four five six seven eight nine ten eleven twelve thirteen fourteen fiveteen sixteen seventeen]</string>
+    <string name="autofill_expiration_date_re">[éхþ|^/|ýéåŕ|åɓļåûƒðåţûḿ|ĝûéļţîĝ|ĝüļţîĝ|ýåĥŕ|ƒéçĥå|šçåðéñžå|有効期限|Våļîðåðé|Срок действия карты|年|有效期 one two three four five six seven eight nine ten eleven]</string>
     <string name="autofill_card_ignored_re">[^çåŕð one two]</string>
     <string name="autofill_fax_re">[ƒåх|ţéļéçöþîé|ţéļéçöþîé|ファックス|факс|传真|傳真 one two three four five]</string>
     <string name="autofill_country_code_re">[çöûñţŕý.*çöðé|ççöðé|_çç one two three]</string>

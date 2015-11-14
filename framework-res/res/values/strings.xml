@@ -143,6 +143,8 @@
     <string name="perf_profile_pwrsv">Power save</string>
     <string name="perf_profile_bal">Balanced</string>
     <string name="perf_profile_perf">Performance</string>
+    <string name="perf_profile_bias_power">Efficiency</string>
+    <string name="perf_profile_bias_perf">Quick</string>
     <string name="theme_install_error_title">Failed to install theme</string>
     <string name="theme_install_error_message">%s failed to install</string>
     <string name="theme_reset_notification_title">Theme reset</string>

@@ -392,7 +392,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070020
+    const v1, #android:array@config_mobile_hotspot_provision_app#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1346,74 +1346,6 @@
     goto :goto_0
 .end method
 
-.method public static maybeMarkCapabilitiesRestricted(Landroid/net/NetworkCapabilities;)V
-    .locals 5
-    .param p0, "nc"    # Landroid/net/NetworkCapabilities;
-
-    .prologue
-    .line 1055
-    invoke-virtual {p0}, Landroid/net/NetworkCapabilities;->getCapabilities()[I
-
-    move-result-object v0
-
-    .local v0, "arr$":[I
-    array-length v3, v0
-
-    .local v3, "len$":I
-    const/4 v2, 0x0
-
-    .local v2, "i$":I
-    :goto_0
-    if-ge v2, v3, :cond_0
-
-    aget v1, v0, v2
-
-    .line 1056
-    .local v1, "capability":I
-    packed-switch v1, :pswitch_data_0
-
-    .line 1076
-    .end local v1    # "capability":I
-    :goto_1
-    :pswitch_0
-    return-void
-
-    .line 1055
-    .restart local v1    # "capability":I
-    :pswitch_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 1075
-    .end local v1    # "capability":I
-    :cond_0
-    const/16 v4, 0xd
-
-    invoke-virtual {p0, v4}, Landroid/net/NetworkCapabilities;->removeCapability(I)Landroid/net/NetworkCapabilities;
-
-    goto :goto_1
-
-    .line 1056
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
-
 .method private networkCapabilitiesForFeature(ILjava/lang/String;)Landroid/net/NetworkCapabilities;
     .locals 4
     .param p1, "networkType"    # I
@@ -1459,17 +1391,14 @@
 
     invoke-virtual {v2, v0}, Landroid/net/NetworkCapabilities;->addCapability(I)Landroid/net/NetworkCapabilities;
 
-    .line 1100
-    invoke-static {v1}, Landroid/net/ConnectivityManager;->maybeMarkCapabilitiesRestricted(Landroid/net/NetworkCapabilities;)V
+    invoke-virtual {v1}, Landroid/net/NetworkCapabilities;->maybeMarkCapabilitiesRestricted()V
 
-    .line 1111
     .end local v0    # "cap":I
     .end local v1    # "netCap":Landroid/net/NetworkCapabilities;
     :cond_0
     :goto_1
     return-object v1
 
-    .line 1083
     .restart local v0    # "cap":I
     :cond_1
     const-string v2, "enableSUPL"
@@ -1583,22 +1512,18 @@
 
     if-eqz v2, :cond_0
 
-    .line 1104
     new-instance v1, Landroid/net/NetworkCapabilities;
 
     invoke-direct {v1}, Landroid/net/NetworkCapabilities;-><init>()V
 
-    .line 1105
     .restart local v1    # "netCap":Landroid/net/NetworkCapabilities;
     invoke-virtual {v1, v3}, Landroid/net/NetworkCapabilities;->addTransportType(I)Landroid/net/NetworkCapabilities;
 
-    .line 1106
     const/4 v2, 0x6
 
     invoke-virtual {v1, v2}, Landroid/net/NetworkCapabilities;->addCapability(I)Landroid/net/NetworkCapabilities;
 
-    .line 1107
-    invoke-static {v1}, Landroid/net/ConnectivityManager;->maybeMarkCapabilitiesRestricted(Landroid/net/NetworkCapabilities;)V
+    invoke-virtual {v1}, Landroid/net/NetworkCapabilities;->maybeMarkCapabilitiesRestricted()V
 
     goto :goto_1
 .end method

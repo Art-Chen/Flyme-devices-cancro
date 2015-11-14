@@ -1376,7 +1376,7 @@
 
     move-result-object v4
 
-    const v5, 0x112008f
+    const v5, #android:bool@useImsAlwaysForEmergencyCall#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -3691,7 +3691,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040004
+    const v2, #android:string@defaultVoiceMailAlphaTag#t
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -3774,7 +3774,7 @@
 
     move-result-object v5
 
-    const v6, 0x1070047
+    const v6, #android:array@config_default_vm_number#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -3890,7 +3890,7 @@
 
     move-result-object v5
 
-    const v6, 0x1120065
+    const v6, #android:bool@config_telephony_use_own_number_for_voicemail#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getBoolean(I)Z
 

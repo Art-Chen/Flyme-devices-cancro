@@ -1553,7 +1553,7 @@
 
     move-result-object v5
 
-    const v6, 0x112007b
+    const v6, #android:bool@config_send_sms1x_on_voice_call#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getBoolean(I)Z
 

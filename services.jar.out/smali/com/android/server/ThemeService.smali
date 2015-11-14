@@ -2054,7 +2054,7 @@
 
     iget-object v3, p0, Lcom/android/server/ThemeService;->mContext:Landroid/content/Context;
 
-    const v4, 0x104008f
+    const v4, #android:string@theme_install_error_title#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2066,7 +2066,7 @@
 
     iget-object v3, p0, Lcom/android/server/ThemeService;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040090
+    const v4, #android:string@theme_install_error_message#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2084,7 +2084,7 @@
 
     move-result-object v2
 
-    const v3, 0x1080078
+    const v3, #android:drawable@stat_notify_error#t
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

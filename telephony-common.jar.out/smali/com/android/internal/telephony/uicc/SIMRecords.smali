@@ -2256,7 +2256,7 @@
 
     .line 1522
     .local v0, "resource":Landroid/content/res/Resources;
-    const v1, 0x11200b5
+    const v1, #android:bool@config_use_sim_language_file#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -3558,7 +3558,7 @@
 
     move-result-object v2
 
-    const v3, 0x11200c4
+    const v3, #android:bool@def_telephony_spn_spec_enabled#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -8819,7 +8819,7 @@
 
     if-eqz v2, :cond_44
 
-    const v2, 0x112009c
+    const v2, #android:bool@editable_voicemailnumber#t
 
     move-object/from16 v0, v22
 

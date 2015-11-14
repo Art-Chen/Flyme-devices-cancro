@@ -46,15 +46,19 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 227
+    # getter for: Lcom/android/server/power/ShutdownThread;->mRebootSafeMode:Z
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$000()Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
     iget-boolean v4, p0, Lcom/android/server/power/ShutdownThread$1;->val$advancedReboot:Z
 
     if-eqz v4, :cond_1
 
-    .line 228
     const/4 v3, 0x0
 
-    .line 229
     .local v3, "softReboot":Z
     check-cast p1, Landroid/app/AlertDialog;
 
@@ -82,7 +86,7 @@
 
     move-result-object v4
 
-    const v5, 0x107000c
+    const v5, #android:array@shutdown_reboot_actions#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -96,13 +100,11 @@
 
     if-ge v2, v4, :cond_0
 
-    .line 235
     aget-object v4, v0, v2
 
     # setter for: Lcom/android/server/power/ShutdownThread;->mRebootReason:Ljava/lang/String;
-    invoke-static {v4}, Lcom/android/server/power/ShutdownThread;->access$002(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/android/server/power/ShutdownThread;->access$102(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 236
     aget-object v4, v0, v2
 
     const-string v5, "soft_reboot"
@@ -113,11 +115,9 @@
 
     if-eqz v4, :cond_0
 
-    .line 237
     # invokes: Lcom/android/server/power/ShutdownThread;->doSoftReboot()V
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$100()V
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$200()V
 
-    .line 246
     .end local v0    # "actions":[Ljava/lang/String;
     .end local v1    # "reasonsList":Landroid/widget/ListView;
     .end local v2    # "selected":I
@@ -133,7 +133,7 @@
     const/4 v4, 0x1
 
     # setter for: Lcom/android/server/power/ShutdownThread;->mReboot:Z
-    invoke-static {v4}, Lcom/android/server/power/ShutdownThread;->access$202(Z)Z
+    invoke-static {v4}, Lcom/android/server/power/ShutdownThread;->access$302(Z)Z
 
     .line 245
     .end local v1    # "reasonsList":Landroid/widget/ListView;
@@ -143,7 +143,7 @@
     iget-object v4, p0, Lcom/android/server/power/ShutdownThread$1;->val$context:Landroid/content/Context;
 
     # invokes: Lcom/android/server/power/ShutdownThread;->beginShutdownSequence(Landroid/content/Context;)V
-    invoke-static {v4}, Lcom/android/server/power/ShutdownThread;->access$300(Landroid/content/Context;)V
+    invoke-static {v4}, Lcom/android/server/power/ShutdownThread;->access$400(Landroid/content/Context;)V
 
     goto :goto_0
 .end method

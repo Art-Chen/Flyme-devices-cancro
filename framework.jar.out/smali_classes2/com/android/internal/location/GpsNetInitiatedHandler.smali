@@ -635,8 +635,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 584
-    const v1, 0x104064b
+    const v1, #android:string@gpsNotifMessage#t
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -689,8 +688,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 568
-    const v1, 0x1040649
+    const v1, #android:string@gpsNotifTicker#t
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -743,8 +741,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 577
-    const v1, 0x104064a
+    const v1, #android:string@gpsNotifTitle#t
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1221,39 +1218,33 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 371
     iget-object v5, p0, Lcom/android/internal/location/GpsNetInitiatedHandler;->mNiNotification:Landroid/app/Notification;
 
     if-nez v5, :cond_1
 
-    .line 372
     new-instance v5, Landroid/app/Notification;
 
     invoke-direct {v5}, Landroid/app/Notification;-><init>()V
 
     iput-object v5, p0, Lcom/android/internal/location/GpsNetInitiatedHandler;->mNiNotification:Landroid/app/Notification;
 
-    .line 373
     iget-object v5, p0, Lcom/android/internal/location/GpsNetInitiatedHandler;->mNiNotification:Landroid/app/Notification;
 
-    const v6, 0x1080689
+    const v6, #android:drawable@stat_sys_gps_on#t
 
     iput v6, v5, Landroid/app/Notification;->icon:I
 
-    .line 374
     iget-object v5, p0, Lcom/android/internal/location/GpsNetInitiatedHandler;->mNiNotification:Landroid/app/Notification;
 
     const-wide/16 v6, 0x0
 
     iput-wide v6, v5, Landroid/app/Notification;->when:J
 
-    .line 377
     :cond_1
     iget-boolean v5, p0, Lcom/android/internal/location/GpsNetInitiatedHandler;->mPlaySounds:Z
 
     if-eqz v5, :cond_2
 
-    .line 378
     iget-object v5, p0, Lcom/android/internal/location/GpsNetInitiatedHandler;->mNiNotification:Landroid/app/Notification;
 
     iget v6, v5, Landroid/app/Notification;->defaults:I
@@ -1313,7 +1304,7 @@
 
     move-result-object v6
 
-    const v7, 0x106005c
+    const v7, #android:color@system_notification_accent_color#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getColor(I)I
 

@@ -59,7 +59,7 @@
 
     move-result-object v3
 
-    const v4, 0x10900e9
+    const v4, #android:layout@user_switching_dialog#t
 
     const/4 v5, 0x0
 
@@ -69,7 +69,7 @@
 
     .line 55
     .local v2, "view":Landroid/view/View;
-    const v3, 0x102000b
+    const v3, #android:id@message#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    const v4, 0x10406e3
+    const v4, #android:string@user_switching_message#t
 
     const/4 v5, 0x1
 

@@ -49,39 +49,30 @@
 
     const/4 v8, 0x0
 
-    .line 59
     invoke-direct {p0, p1}, Lcom/android/server/BasePermissionDialog;-><init>(Landroid/content/Context;)V
 
-    .line 121
     new-instance v4, Lcom/android/server/PermissionDialog$1;
 
     invoke-direct {v4, p0}, Lcom/android/server/PermissionDialog$1;-><init>(Lcom/android/server/PermissionDialog;)V
 
     iput-object v4, p0, Lcom/android/server/PermissionDialog;->mHandler:Landroid/os/Handler;
 
-    .line 61
     iput-object p1, p0, Lcom/android/server/PermissionDialog;->mContext:Landroid/content/Context;
 
-    .line 62
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 64
     .local v2, "res":Landroid/content/res/Resources;
     iput-object p2, p0, Lcom/android/server/PermissionDialog;->mService:Lcom/android/server/AppOpsService;
 
-    .line 65
     iput p3, p0, Lcom/android/server/PermissionDialog;->mCode:I
 
-    .line 66
     iput-object p5, p0, Lcom/android/server/PermissionDialog;->mPackageName:Ljava/lang/String;
 
-    .line 67
     iput p4, p0, Lcom/android/server/PermissionDialog;->mUid:I
 
-    .line 68
-    const v4, 0x107000e
+    const v4, #android:array@app_ops_labels#t
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
 
@@ -95,7 +86,7 @@
     .line 73
     const/4 v4, -0x1
 
-    const v5, 0x1040618
+    const v5, #android:string@allow#t
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -112,7 +103,7 @@
     .line 76
     const/4 v4, -0x2
 
-    const v5, 0x1040619
+    const v5, #android:string@deny#t
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -128,8 +119,7 @@
 
     invoke-virtual {p0, v4, v5, v6}, Lcom/android/server/PermissionDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
-    .line 79
-    const v4, 0x1040032
+    const v4, #android:string@privacy_guard_dialog_title#t
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -193,7 +183,7 @@
 
     move-result-object v4
 
-    const v5, 0x1090089
+    const v5, #android:layout@permission_confirmation_dialog#t
 
     const/4 v6, 0x0
 
@@ -206,7 +196,7 @@
     .line 89
     iget-object v4, p0, Lcom/android/server/PermissionDialog;->mView:Landroid/view/View;
 
-    const v5, 0x1020351
+    const v5, #android:id@permission_text#t
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +208,7 @@
     .local v3, "tv":Landroid/widget/TextView;
     iget-object v4, p0, Lcom/android/server/PermissionDialog;->mView:Landroid/view/View;
 
-    const v5, 0x1020353
+    const v5, #android:id@permission_remember_choice_checkbox#t
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -246,7 +236,7 @@
     :cond_0
     iget-object v4, p0, Lcom/android/server/PermissionDialog;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040033
+    const v5, #android:string@privacy_guard_dialog_summary#t
 
     new-array v6, v9, [Ljava/lang/Object;
 

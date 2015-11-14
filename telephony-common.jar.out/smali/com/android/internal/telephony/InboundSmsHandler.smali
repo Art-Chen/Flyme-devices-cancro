@@ -233,7 +233,7 @@
 
     move-result-object v2
 
-    const v4, 0x112005f
+    const v4, #android:bool@config_sms_capable#t
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
 

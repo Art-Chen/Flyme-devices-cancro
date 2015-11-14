@@ -50,12 +50,12 @@
     invoke-direct {v2}, Landroid/media/MediaPlayer;-><init>()V
 
     # setter for: Lcom/android/server/power/ShutdownThread;->mMediaPlayer:Landroid/media/MediaPlayer;
-    invoke-static {v2}, Lcom/android/server/power/ShutdownThread;->access$402(Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer;
+    invoke-static {v2}, Lcom/android/server/power/ShutdownThread;->access$502(Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer;
 
     .line 773
     :try_start_0
     # getter for: Lcom/android/server/power/ShutdownThread;->mMediaPlayer:Landroid/media/MediaPlayer;
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$400()Landroid/media/MediaPlayer;
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Landroid/media/MediaPlayer;
 
     move-result-object v2
 
@@ -63,7 +63,7 @@
 
     .line 774
     # getter for: Lcom/android/server/power/ShutdownThread;->mMediaPlayer:Landroid/media/MediaPlayer;
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$400()Landroid/media/MediaPlayer;
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Landroid/media/MediaPlayer;
 
     move-result-object v2
 
@@ -71,7 +71,7 @@
 
     .line 775
     # getter for: Lcom/android/server/power/ShutdownThread;->mMediaPlayer:Landroid/media/MediaPlayer;
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$400()Landroid/media/MediaPlayer;
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Landroid/media/MediaPlayer;
 
     move-result-object v2
 
@@ -79,7 +79,7 @@
 
     .line 776
     # getter for: Lcom/android/server/power/ShutdownThread;->mMediaPlayer:Landroid/media/MediaPlayer;
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$400()Landroid/media/MediaPlayer;
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Landroid/media/MediaPlayer;
 
     move-result-object v2
 
@@ -87,7 +87,7 @@
 
     .line 777
     # getter for: Lcom/android/server/power/ShutdownThread;->mMediaPlayer:Landroid/media/MediaPlayer;
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$400()Landroid/media/MediaPlayer;
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Landroid/media/MediaPlayer;
 
     move-result-object v2
 

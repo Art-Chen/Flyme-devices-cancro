@@ -240,7 +240,7 @@
 
     const-string v1, "android.intent.extra.client_label"
 
-    const v2, 0x1040620
+    const v2, #android:string@accessibility_binding_label#t
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 

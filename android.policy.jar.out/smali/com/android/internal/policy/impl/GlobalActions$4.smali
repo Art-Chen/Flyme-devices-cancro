@@ -59,7 +59,7 @@
 
     move-result-object v0
 
-    const v1, 0x10401db
+    const v1, #android:string@bugreport_status#t
 
     const/4 v2, 0x2
 
@@ -100,26 +100,22 @@
 
     invoke-direct {v0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 468
     .local v0, "builder":Landroid/app/AlertDialog$Builder;
-    const v2, 0x10401d9
+    const v2, #android:string@bugreport_title#t
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    .line 469
-    const v2, 0x10401da
+    const v2, #android:string@bugreport_message#t
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
-    .line 470
-    const/high16 v2, 0x1040000
+    const/high16 v2, #android:string@cancel#i
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 471
-    const v2, 0x1040563
+    const v2, #android:string@report#t
 
     new-instance v3, Lcom/android/internal/policy/impl/GlobalActions$4$1;
 

@@ -17,8 +17,6 @@
 # static fields
 .field private static final BUFFER_SLACK:F = 1.5f
 
-.field private static final DEFAULT_CAPACITY:I
-
 
 # instance fields
 .field private mCapacity:I
@@ -35,37 +33,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .prologue
-    .line 588
-    const-wide/high16 v0, 0x402e000000000000L    # 15.0
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v0
-
-    double-to-int v0, v0
-
-    sput v0, Lcom/android/server/display/AutomaticBrightnessController$AmbientLightRingBuffer;->DEFAULT_CAPACITY:I
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .prologue
-    .line 601
-    sget v0, Lcom/android/server/display/AutomaticBrightnessController$AmbientLightRingBuffer;->DEFAULT_CAPACITY:I
-
-    invoke-direct {p0, v0}, Lcom/android/server/display/AutomaticBrightnessController$AmbientLightRingBuffer;-><init>(I)V
-
-    .line 602
-    return-void
-.end method
-
 .method public constructor <init>(I)V
     .locals 1
     .param p1, "initialCapacity"    # I
@@ -615,4 +582,33 @@
     invoke-static {v3, v6, v2, v0, v4}, Ljava/lang/System;->arraycopy([JI[JII)V
 
     goto :goto_0
+.end method
+
+.method public constructor <init>(JI)V
+    .locals 3
+    .param p1, "lightSensorRate"    # J
+    .param p3, "ambientLightHorizon"    # I
+
+    .prologue
+    int-to-float v0, p3
+
+    const/high16 v1, 0x3fc00000    # 1.5f
+
+    mul-float/2addr v0, v1
+
+    long-to-float v1, p1
+
+    div-float/2addr v0, v1
+
+    float-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v0
+
+    double-to-int v0, v0
+
+    invoke-direct {p0, v0}, Lcom/android/server/display/AutomaticBrightnessController$AmbientLightRingBuffer;-><init>(I)V
+
+    return-void
 .end method

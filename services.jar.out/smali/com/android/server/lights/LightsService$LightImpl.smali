@@ -38,19 +38,26 @@
 
 # direct methods
 .method private constructor <init>(Lcom/android/server/lights/LightsService;I)V
-    .locals 0
+    .locals 2
     .param p2, "id"    # I
 
     .prologue
-    .line 41
+    const/4 v1, 0x0
+
     iput-object p1, p0, Lcom/android/server/lights/LightsService$LightImpl;->this$0:Lcom/android/server/lights/LightsService;
 
     invoke-direct {p0}, Lcom/android/server/lights/Light;-><init>()V
 
-    .line 42
     iput p2, p0, Lcom/android/server/lights/LightsService$LightImpl;->mId:I
 
-    .line 43
+    const/16 v0, 0xff
+
+    iput v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mBrightnessLevel:I
+
+    iput-boolean v1, p0, Lcom/android/server/lights/LightsService$LightImpl;->mModesUpdate:Z
+
+    iput-boolean v1, p0, Lcom/android/server/lights/LightsService$LightImpl;->mMultipleLeds:Z
+
     return-void
 .end method
 
@@ -528,28 +535,35 @@
     .param p2, "multipleLeds"    # Z
 
     .prologue
-    .line 75
     monitor-enter p0
 
-    .line 76
     :try_start_0
+    iget v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mBrightnessLevel:I
+
+    if-eq v0, p1, :cond_0
+
     iput p1, p0, Lcom/android/server/lights/LightsService$LightImpl;->mBrightnessLevel:I
 
-    .line 77
-    iput-boolean p2, p0, Lcom/android/server/lights/LightsService$LightImpl;->mMultipleLeds:Z
-
-    .line 78
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mModesUpdate:Z
 
-    .line 79
+    :cond_0
+    iget-boolean v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mMultipleLeds:Z
+
+    if-eq v0, p2, :cond_1
+
+    iput-boolean p2, p0, Lcom/android/server/lights/LightsService$LightImpl;->mMultipleLeds:Z
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/server/lights/LightsService$LightImpl;->mModesUpdate:Z
+
+    :cond_1
     monitor-exit p0
 
-    .line 80
     return-void
 
-    .line 79
     :catchall_0
     move-exception v0
 

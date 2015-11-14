@@ -406,7 +406,7 @@
 .end method
 
 .method private static computeBestConfiguration(Ljava/util/ArrayList;I)Lcom/android/server/AssetAtlasService$Configuration;
-    .locals 22
+    .locals 23
     .param p1, "pixelCount"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -453,13 +453,11 @@
 
     move-result v14
 
-    .line 404
     .local v14, "cpuCount":I
     const/4 v8, 0x1
 
-    if-ne v14, v8, :cond_0
+    if-ne v14, v8, :cond_1
 
-    .line 405
     new-instance v4, Lcom/android/server/AssetAtlasService$ComputeWorker;
 
     const/16 v5, 0x300
@@ -478,33 +476,28 @@
 
     invoke-virtual {v4}, Lcom/android/server/AssetAtlasService$ComputeWorker;->run()V
 
-    .line 427
-    :goto_0
+    :cond_0
     invoke-interface {v10}, Ljava/util/List;->size()I
 
     move-result v8
 
-    if-nez v8, :cond_2
+    if-nez v8, :cond_3
 
-    .line 428
     const-string v8, "AssetAtlas"
 
     const-string v9, "No atlas configuration found!"
 
     invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 429
     const/4 v8, 0x0
 
-    .line 448
-    :goto_1
+    .line 427
+    :goto_0
     return-object v8
 
-    .line 407
-    :cond_0
+    :cond_1
     const/16 v5, 0x300
 
-    .line 408
     .local v5, "start":I
     add-int/lit8 v8, v14, -0x1
 
@@ -527,10 +520,10 @@
     const/16 v17, 0x0
 
     .local v17, "i":I
-    :goto_2
+    :goto_1
     move/from16 v0, v17
 
-    if-ge v0, v14, :cond_1
+    if-ge v0, v14, :cond_2
 
     .line 414
     new-instance v4, Lcom/android/server/AssetAtlasService$ComputeWorker;
@@ -549,17 +542,17 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v19, "Atlas Worker #"
+    const-string v20, "Atlas Worker #"
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    add-int/lit8 v19, v17, 0x1
+    add-int/lit8 v20, v17, 0x1
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -580,29 +573,41 @@
 
     add-int/lit8 v6, v6, 0x40
 
-    goto :goto_2
+    goto :goto_1
 
     .line 420
     .end local v4    # "worker":Lcom/android/server/AssetAtlasService$ComputeWorker;
-    :cond_1
+    :cond_2
     const-wide/16 v8, 0xa
 
     :try_start_0
-    sget-object v19, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v20, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     invoke-virtual {v11, v8, v9, v0}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
+    move-result v18
+
+    .local v18, "isAllWorkerFinished":Z
+    if-nez v18, :cond_0
+
+    const-string v8, "AssetAtlas"
+
+    const-string v9, "Could not complete configuration computation before timeout."
+
+    invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v8, 0x0
+
     goto :goto_0
 
-    .line 421
+    .end local v18    # "isAllWorkerFinished":Z
     :catch_0
     move-exception v16
 
-    .line 422
     .local v16, "e":Ljava/lang/InterruptedException;
     const-string v8, "AssetAtlas"
 
@@ -610,19 +615,17 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 423
     const/4 v8, 0x0
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 433
     .end local v5    # "start":I
     .end local v6    # "end":I
     .end local v7    # "step":I
     .end local v11    # "signal":Ljava/util/concurrent/CountDownLatch;
     .end local v16    # "e":Ljava/lang/InterruptedException;
     .end local v17    # "i":I
-    :cond_2
+    :cond_3
     new-instance v8, Lcom/android/server/AssetAtlasService$2;
 
     invoke-direct {v8}, Lcom/android/server/AssetAtlasService$2;-><init>()V
@@ -656,23 +659,23 @@
 
     const-string v9, "Found best atlas configuration in %.2fs"
 
-    const/16 v19, 0x1
+    const/16 v20, 0x1
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    const/16 v20, 0x0
+    const/16 v21, 0x0
 
     invoke-static {v15}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v21
+    move-result-object v22
 
-    aput-object v21, v19, v20
+    aput-object v22, v20, v21
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     invoke-static {v9, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -685,45 +688,44 @@
 
     invoke-interface {v10, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v18
+    move-result-object v19
 
-    check-cast v18, Lcom/android/server/AssetAtlasService$WorkerResult;
+    check-cast v19, Lcom/android/server/AssetAtlasService$WorkerResult;
 
-    .line 448
-    .local v18, "result":Lcom/android/server/AssetAtlasService$WorkerResult;
+    .local v19, "result":Lcom/android/server/AssetAtlasService$WorkerResult;
     new-instance v8, Lcom/android/server/AssetAtlasService$Configuration;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iget-object v9, v0, Lcom/android/server/AssetAtlasService$WorkerResult;->type:Landroid/graphics/Atlas$Type;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iget v0, v0, Lcom/android/server/AssetAtlasService$WorkerResult;->width:I
 
-    move/from16 v19, v0
+    move/from16 v20, v0
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iget v0, v0, Lcom/android/server/AssetAtlasService$WorkerResult;->height:I
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iget v0, v0, Lcom/android/server/AssetAtlasService$WorkerResult;->count:I
 
-    move/from16 v21, v0
+    move/from16 v22, v0
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
-    move/from16 v1, v20
+    move/from16 v1, v21
 
-    move/from16 v2, v21
+    move/from16 v2, v22
 
     invoke-direct {v8, v9, v0, v1, v2}, Lcom/android/server/AssetAtlasService$Configuration;-><init>(Landroid/graphics/Atlas$Type;III)V
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 .end method
 
 .method private static deleteDataFile()V

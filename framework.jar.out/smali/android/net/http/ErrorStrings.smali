@@ -23,7 +23,7 @@
     .param p0, "errorCode"    # I
 
     .prologue
-    const v0, 0x10401a9
+    const v0, #android:string@httpError#t
 
     .line 45
     packed-switch p0, :pswitch_data_0
@@ -51,102 +51,85 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
     :goto_0
     :pswitch_0
     return v0
 
-    .line 47
     :pswitch_1
-    const v0, 0x10401a8
+    const v0, #android:string@httpErrorOk#t
 
     goto :goto_0
 
-    .line 53
     :pswitch_2
-    const v0, 0x10401aa
+    const v0, #android:string@httpErrorLookup#t
 
     goto :goto_0
 
-    .line 56
     :pswitch_3
-    const v0, 0x10401ab
+    const v0, #android:string@httpErrorUnsupportedAuthScheme#t
 
     goto :goto_0
 
-    .line 59
     :pswitch_4
-    const v0, 0x10401ac
+    const v0, #android:string@httpErrorAuth#t
 
     goto :goto_0
 
-    .line 62
     :pswitch_5
-    const v0, 0x10401ad
+    const v0, #android:string@httpErrorProxyAuth#t
 
     goto :goto_0
 
-    .line 65
     :pswitch_6
-    const v0, 0x10401ae
+    const v0, #android:string@httpErrorConnect#t
 
     goto :goto_0
 
-    .line 68
     :pswitch_7
-    const v0, 0x10401af
+    const v0, #android:string@httpErrorIO#t
 
     goto :goto_0
 
-    .line 71
     :pswitch_8
-    const v0, 0x10401b0
+    const v0, #android:string@httpErrorTimeout#t
 
     goto :goto_0
 
-    .line 74
     :pswitch_9
-    const v0, 0x10401b1
+    const v0, #android:string@httpErrorRedirectLoop#t
 
     goto :goto_0
 
-    .line 77
     :pswitch_a
-    const v0, 0x1040008
+    const v0, #android:string@httpErrorUnsupportedScheme#t
 
     goto :goto_0
 
-    .line 80
     :pswitch_b
-    const v0, 0x10401b2
+    const v0, #android:string@httpErrorFailedSslHandshake#t
 
     goto :goto_0
 
-    .line 83
     :pswitch_c
-    const v0, 0x1040007
+    const v0, #android:string@httpErrorBadUrl#t
 
     goto :goto_0
 
-    .line 86
     :pswitch_d
-    const v0, 0x10401b3
+    const v0, #android:string@httpErrorFile#t
 
     goto :goto_0
 
-    .line 89
     :pswitch_e
-    const v0, 0x10401b4
+    const v0, #android:string@httpErrorFileNotFound#t
 
     goto :goto_0
 
-    .line 92
     :pswitch_f
-    const v0, 0x10401b5
+    const v0, #android:string@httpErrorTooManyRequests#t
 
     goto :goto_0
 
-    .line 45
     nop
 
     :pswitch_data_0

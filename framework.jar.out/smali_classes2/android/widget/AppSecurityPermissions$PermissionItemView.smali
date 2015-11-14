@@ -91,24 +91,20 @@
 
     const/4 v0, 0x1
 
-    .line 238
     .local v0, "isRequired":Z
     :goto_1
     if-nez v0, :cond_0
 
-    .line 242
     new-instance v1, Landroid/widget/AppSecurityPermissions$PermissionItemView$1;
 
     invoke-direct {v1, p0}, Landroid/widget/AppSecurityPermissions$PermissionItemView$1;-><init>(Landroid/widget/AppSecurityPermissions$PermissionItemView;)V
 
-    .line 250
     .local v1, "ocl":Landroid/content/DialogInterface$OnClickListener;
-    const v2, 0x10406e8
+    const v2, #android:string@revoke#t
 
     invoke-virtual {p1, v2, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 251
-    const v2, 0x104000a
+    const v2, #android:string@ok#t
 
     const/4 v3, 0x0
 
@@ -272,7 +268,7 @@
 
     move-result-object v6
 
-    const v7, 0x10405bd
+    const v7, #android:string@perms_description_app#t
 
     new-array v8, v9, [Ljava/lang/Object;
 
@@ -353,20 +349,15 @@
     .param p6, "showRevokeUI"    # Z
 
     .prologue
-    .line 154
     iput-object p1, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mGroup:Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;
 
-    .line 155
     iput-object p2, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPerm:Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
-    .line 156
     iput-boolean p6, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mShowRevokeUI:Z
 
-    .line 157
     iput-object p5, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPackageName:Ljava/lang/String;
 
-    .line 159
-    const v8, 0x10202d7
+    const v8, #android:id@perm_icon#t
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 
@@ -376,7 +367,7 @@
 
     .line 160
     .local v5, "permGrpIcon":Landroid/widget/ImageView;
-    const v8, 0x10202d8
+    const v8, #android:id@perm_name#t
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 

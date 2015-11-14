@@ -256,7 +256,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040100
+    const v3, #android:string@config_wimaxManagerClassname#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -297,7 +297,7 @@
 
     move-result-object v2
 
-    const v3, 0x10400fe
+    const v3, #android:string@config_wimaxServiceJarLocation#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -309,7 +309,7 @@
 
     move-result-object v2
 
-    const v3, 0x10400ff
+    const v3, #android:string@config_wimaxNativeLibLocation#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -607,7 +607,7 @@
 
     move-result-object v0
 
-    const v1, 0x112006d
+    const v1, #android:bool@config_wimaxEnabled#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

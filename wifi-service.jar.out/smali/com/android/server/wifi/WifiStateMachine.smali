@@ -2292,7 +2292,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e002a
+    const v3, #android:integer@config_wifi_framework_scan_interval#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2339,7 +2339,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e0036
+    const v3, #android:integer@config_wifi_driver_stop_delay#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2358,7 +2358,7 @@
 
     move-result-object v2
 
-    const v3, 0x112001b
+    const v3, #android:bool@config_wifi_background_scan_support#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2377,7 +2377,7 @@
 
     move-result-object v2
 
-    const v3, 0x10400e1
+    const v3, #android:string@config_wifi_p2p_device_type#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2730,7 +2730,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040106
+    const v3, #android:string@config_wifi_tcp_buffers#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -16158,7 +16158,7 @@
 
     move-result-object v3
 
-    const v4, 0x10400e2
+    const v4, #android:string@config_wifi_random_mac_oui#t
 
     new-array v5, v8, [Ljava/lang/Object;
 
@@ -16395,7 +16395,7 @@
 
     move-result-object v1
 
-    const v4, 0x10e0029
+    const v4, #android:integer@config_wifi_scan_interval_wfd_connected#t
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getInteger(I)I
 

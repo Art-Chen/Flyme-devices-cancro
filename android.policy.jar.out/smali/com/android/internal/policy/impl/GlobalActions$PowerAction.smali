@@ -26,17 +26,14 @@
     .locals 2
 
     .prologue
-    .line 380
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$PowerAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    .line 381
-    const v0, 0x1080030
+    const v0, #android:drawable@ic_lock_power_off#t
 
-    const v1, 0x10401d7
+    const v1, #android:string@global_action_power_off#t
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
 
-    .line 383
     return-void
 .end method
 

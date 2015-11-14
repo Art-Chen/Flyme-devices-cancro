@@ -23,19 +23,17 @@
     .locals 6
 
     .prologue
-    .line 1081
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    .line 1082
-    const v1, 0x1080323
+    const v1, #android:drawable@ic_audio_vol_mute#t
 
-    const v2, 0x1080322
+    const v2, #android:drawable@ic_audio_vol#t
 
-    const v3, 0x10401dc
+    const v3, #android:string@global_action_toggle_silent_mode#t
 
-    const v4, 0x10401dd
+    const v4, #android:string@global_action_silent_mode_on_status#t
 
-    const v5, 0x10401de
+    const v5, #android:string@global_action_silent_mode_off_status#t
 
     move-object v0, p0
 

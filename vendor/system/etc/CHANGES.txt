@@ -1,191 +1,77 @@
 ===================================
-Since Thu Oct 15 00:12:10 UTC 2015
+Since Thu Nov 12 01:29:45 UTC 2015
 ===================================
 
-   * frameworks/base
-77dccaf Disable default blending when drawing color rect
+   * bootable/recovery
+c9b1143 recovery: add opt-out of exFAT
+
+   * system/vold
+336f513 cryptfs: Unbreak hardware-backed pattern lock + encryption
+
+===================================
+Since Wed Nov 11 01:01:08 UTC 2015
+===================================
+
+   * external/wpa_supplicant_8
+9ec7ddc NFC: Fix payload length validation in NDEF record parser
+47b5051 WNM: Ignore Key Data in WNM Sleep Mode Response frame if no PMF in use
+bac9fa8 EAP-pwd peer: Fix last fragment length validation
+c69b9d1 EAP-pwd server: Fix last fragment length validation
+6a51515 EAP-pwd peer: Fix error path for unexpected Confirm message
 
    * frameworks/opt/telephony
-8c08c03 Fix NPE on SIM hot swap.
+7df85d5 telephony: use phoneaccounts to determine voiceprompt status
 
-   * packages/apps/CMFileManager
-25bcc73 Secure file moving issue fix
-
-   * packages/apps/Trebuchet
-9d7e661 Trebuchet : Switch to LOGD instead of isLoggable
+   * system/extras/su
+ee9de09 Merge "replace insecure uid spoofing code" into cm-12.1
 
 ===================================
-Since Wed Oct 14 00:09:43 UTC 2015
+Since Tue Nov 10 00:57:37 UTC 2015
 ===================================
 
-   * device/qcom/common
-91fda27 Revert "msm8994: Set a property to track battery mode"
-2565d56 msm8994: Set a property to track battery mode
+   * device/xiaomi/cancro
+3194ed1 cancro: camerawrapper: better zsl handling
 
-   * frameworks/base
-3c6d95f Fix rotation tile animation
-d57e767 SystemUI: Update screenshot notification icon to material
-d64bc48 Services : Ensure proximity check is taken into consideration
+   * frameworks/opt/telephony
+aea6eb3 [DO NOT MERGE] Harmlessly (?) fixes LOD on Sprint and Verizon (?) via Fallback
+
+   * kernel/xiaomi/cancro
+c364611 wlan: Address buffer overflow due to invalid length
 
    * packages/apps/Settings
-de62628 Revert "Don't allow deleting last remaining fingerprint"
-89e5596 Improve fingerprint management activity UX.
+50fed8b Settings: add opt out stats event
 
    * vendor/cmsdk
-29be6a6 Improve several permission description Strings.
+0c0aef6 CMSettings: add reporting status setting
 
 ===================================
-Since Tue Oct 13 00:09:35 UTC 2015
+Since Mon Nov  9 00:09:25 UTC 2015
 ===================================
 
-   * device/qcom/sepolicy
-06765fd DPM : sepolicy: allow netdomain access to cnd and dpmd
+   * packages/providers/ThemesProvider
+2f386fc Fix applied previews query when component doesn't exist
 
-   * external/whispersystems/WhisperPush
-60e90dc Switch WhisperPush to use CMSettings
+   * system/extras/su
+860479b replace insecure uid spoofing code
+1e7b152 daemon: Validate the socket caller's requested FDs
 
-   * frameworks/base
-8f0ec56 Switch packages and services in frameworks not on the bootclasspath to use CMSettings
-ac13447 FingerprintService: synchronize access to clients
-8640db2 Fix horrible warning on every systemui startup.
-2de0a25 Fix huge bounce-back in ListView when double-flinging
-
-   * packages/apps/Settings
-da5f449 Settings: use consistent behavior after forgetting networks
-bf65f1d Revert "Settings: clear dialog states when forgetting network"
-219aad9 Switch to use CMSettings for settings not involved in bootclasspath
-d3e6292 Settings: clear dialog states when forgetting network
-
-   * packages/apps/SetupWizard
-8d2c642 Switch SetupWizard to use CMSettings for settings unrelated to bootclasspath
-
-   * packages/providers/ContactsProvider
-c23f25b Ensure contact preloading is dependent on regional configuration
-
-===================================
-Since Mon Oct 12 00:10:56 UTC 2015
-===================================
-
-   * bionic
-852eb1a bionic: add electric fence into memory debug list, use code 15.
-
-   * external/whispersystems/WhisperPush
-d60781b Automatic translation import
-
-   * frameworks/base
-e744971 Automatic translation import
-0fc76d9 Don't accidently clear TRANSPARENT_VERTICAL_NAV
-
-   * packages/apps/AudioFX
-bebcbe6 Automatic translation import
-
-   * packages/apps/Bluetooth
-20cba87 Automatic translation import
-
-   * packages/apps/CMAccount
-d2316e6 Automatic translation import
-
-   * packages/apps/CMFileManager
-b284ba6 Prevent NPE collecting title, which was preventing the print action.  Use Uri for title and timestamp for print title.
-d8e4b49 Automatic translation import
-
-   * packages/apps/CMUpdater
-64194b9 Automatic translation import
-
-   * packages/apps/Camera2
-6b17037 Automatic translation import
-
-   * packages/apps/CellBroadcastReceiver
-af5a060 Automatic translation import
-
-   * packages/apps/Contacts
-4a4f9ad Automatic translation import
-
-   * packages/apps/ContactsCommon
-e056d18 Automatic translation import
-
-   * packages/apps/DeskClock
-862dad1 Automatic translation import
-
-   * packages/apps/Dialer
-486941b Automatic translation import
-
-   * packages/apps/Eleven
-d5f4407 Automatic translation import
-
-   * packages/apps/Email
-9d3bfb6 Automatic translation import
-
-   * packages/apps/Gallery2
-8de5289 Automatic translation import
-
-   * packages/apps/InCallUI
-bf1878e Automatic translation import
-
-   * packages/apps/LockClock
-76ba8cb Automatic translation import
-
-   * packages/apps/Mms
-1c1d32e Automatic translation import
-
-   * packages/apps/Settings
-c3225ec Automatic translation import
-
-   * packages/apps/SetupWizard
-41917f8 Automatic translation import
-
-   * packages/apps/Stk
-ac9810c Automatic translation import
-
-   * packages/apps/Terminal
-71475d2 Automatic translation import
-
-   * packages/apps/ThemeChooser
-acc2ce1 Automatic translation import
-
-   * packages/apps/Trebuchet
-b1b858f Automatic translation import
-
-   * packages/apps/TvSettings
-a587946 Automatic translation import
-
-   * packages/apps/UnifiedEmail
-8759969 Automatic translation import
-
-   * packages/inputmethods/LatinIME
-8fa1e0e Automatic translation import
-
-   * packages/providers/ContactsProvider
-b3bc906 Unbreak build breakage when NO overlay is present
-9d6f99b preloaded_contacts schema moved, to unbreak builds
-
-   * packages/services/Telephony
-7fea959 Automatic translation import
-
-   * packages/wallpapers/PhotoPhase
-474f79c Automatic translation import
+   * system/vold
+314f910 vold: add opt-out for exFAT
 
    * vendor/cm
-151761e contributors: Add Oppo R7 and R7 Plus
+675f474 cm: add opt-out for exFAT
 
-   * vendor/cmsdk
-0edb893 Automatic translation import
+   * prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9
+f22f062 Add NOTICE and MODULE_LICENSE files.
+3122899 Revert "Revert "Update prebuilt gold for --pic-veneer option.""
 
 ===================================
-Since Sun Oct 11 00:10:35 UTC 2015
+Since Sat Nov  7 01:21:05 UTC 2015
 ===================================
-
-   * build
-a606db3 build: Generalize kernel DTB path
-2f9989d generate_extra_images: Look for 3.10 dtbs
-
-   * frameworks/base
-b180ab8 Multiple LEDs [3/3]: Illumination Bars support
-
-   * hardware/libhardware
-2748948 LEDs Brightness: Add the libhardware comment indications
-e75e2a3 Multiple LEDs [1/3]: Illumination Bars support
 
    * packages/apps/Settings
-821856b Multiple LEDs [2/3]: Illumination Bars support
+c2ca831 Settings: Add security level default string
+
+   * system/extras/su
+4f4cd57 su: Remove dead code
 

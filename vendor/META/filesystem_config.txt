@@ -336,7 +336,6 @@ system/bin/tune2fs 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/uiautomator 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/umount 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/uncrypt 0 0 750 selabel=u:object_r:uncrypt_exec:s0 capabilities=0x0
-system/bin/updater 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/uptime 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/vdc 0 2000 755 selabel=u:object_r:vdc_exec:s0 capabilities=0x0
 system/bin/vmstat 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0

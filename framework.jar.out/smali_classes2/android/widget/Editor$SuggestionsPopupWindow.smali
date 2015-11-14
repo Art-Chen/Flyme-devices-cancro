@@ -896,7 +896,7 @@
 
     move-result-object v33
 
-    const v34, 0x104053e
+    const v34, #android:string@addToDictionary#t
 
     invoke-virtual/range {v33 .. v34}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1012,7 +1012,7 @@
 
     move-result-object v33
 
-    const v34, 0x104053f
+    const v34, #android:string@deleteText#t
 
     invoke-virtual/range {v33 .. v34}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1278,7 +1278,7 @@
 
     move-result-object v1
 
-    const v2, 0x1010373
+    const v2, #android:attr@textSuggestionsWindowStyle#t
 
     invoke-direct {v0, p0, v1, v2}, Landroid/widget/Editor$SuggestionsPopupWindow$CustomPopupWindow;-><init>(Landroid/widget/Editor$SuggestionsPopupWindow;Landroid/content/Context;I)V
 

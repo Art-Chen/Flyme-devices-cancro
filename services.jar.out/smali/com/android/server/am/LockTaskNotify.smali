@@ -81,7 +81,7 @@
 
     move-result-object v1
 
-    const v2, 0x112006a
+    const v2, #android:bool@config_showNavigationBar#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -156,25 +156,20 @@
     .param p1, "isLocked"    # Z
 
     .prologue
-    .line 63
     if-eqz p1, :cond_1
 
-    .line 64
-    const v0, 0x104075f
+    const v0, #android:string@lock_to_app_toast_locked#t
 
-    .line 71
     .local v0, "textResId":I
     :goto_0
     iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mLastToast:Landroid/widget/Toast;
 
     if-eqz v1, :cond_0
 
-    .line 72
     iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mLastToast:Landroid/widget/Toast;
 
     invoke-virtual {v1}, Landroid/widget/Toast;->cancel()V
 
-    .line 74
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
 
@@ -202,13 +197,11 @@
 
     if-eqz v1, :cond_2
 
-    .line 66
-    const v0, 0x104075e
+    const v0, #android:string@lock_to_app_toast_accessible#t
 
     .restart local v0    # "textResId":I
     goto :goto_0
 
-    .line 68
     .end local v0    # "textResId":I
     :cond_2
     iget-boolean v1, p0, Lcom/android/server/am/LockTaskNotify;->mHasNavigationBar:Z
@@ -220,7 +213,7 @@
     if-eqz v1, :cond_4
 
     :cond_3
-    const v0, 0x104075d
+    const v0, #android:string@lock_to_app_toast#t
 
     .restart local v0    # "textResId":I
     :goto_1
@@ -228,7 +221,7 @@
 
     .end local v0    # "textResId":I
     :cond_4
-    const v0, 0x10400ce
+    const v0, #android:string@lock_to_app_toast_no_navbar#t
 
     goto :goto_1
 .end method
@@ -238,17 +231,13 @@
     .param p1, "starting"    # Z
 
     .prologue
-    .line 78
-    const v0, 0x1040761
+    const v0, #android:string@lock_to_app_exit#t
 
-    .line 79
     .local v0, "showString":I
     if-eqz p1, :cond_0
 
-    .line 80
-    const v0, 0x1040760
+    const v0, #android:string@lock_to_app_start#t
 
-    .line 82
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/LockTaskNotify;->mContext:Landroid/content/Context;
 

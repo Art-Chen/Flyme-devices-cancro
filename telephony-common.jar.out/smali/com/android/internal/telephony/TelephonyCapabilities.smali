@@ -52,14 +52,11 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 106
-    const v0, 0x1040167
+    const v0, #android:string@imei#t
 
-    .line 112
     :goto_0
     return v0
 
-    .line 107
     :cond_0
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
@@ -69,12 +66,10 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 108
-    const v0, 0x1040168
+    const v0, #android:string@meid#t
 
     goto :goto_0
 
-    .line 110
     :cond_1
     const-string v0, "TelephonyCapabilities"
 

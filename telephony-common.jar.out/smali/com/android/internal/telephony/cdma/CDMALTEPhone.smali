@@ -614,21 +614,34 @@
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_2
+    if-ne v3, v4, :cond_0
 
-    .line 431
     const-string v3, "ro.cdma.home.operator.numeric"
 
     invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 444
     :cond_0
-    :goto_0
-    if-nez v2, :cond_1
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 445
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CDMALTEPhone;->mSimRecords:Lcom/android/internal/telephony/uicc/SIMRecords;
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v1}, Lcom/android/internal/telephony/uicc/IccRecords;->getOperatorNumeric()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 450
+    :cond_1
+    :goto_0
+    if-nez v2, :cond_2
+
     const-string v4, "CDMAPhone"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -674,8 +687,7 @@
 
     invoke-static {v4, v3}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 450
-    :cond_1
+    :cond_2
     const-string v3, "CDMAPhone"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -710,29 +722,8 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 453
     return-object v2
 
-    .line 432
-    :cond_2
-    iget v3, p0, Lcom/android/internal/telephony/cdma/CDMALTEPhone;->mCdmaSubscriptionSource:I
-
-    if-nez v3, :cond_0
-
-    .line 433
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CDMALTEPhone;->mSimRecords:Lcom/android/internal/telephony/uicc/SIMRecords;
-
-    .line 434
-    if-eqz v1, :cond_3
-
-    .line 435
-    invoke-virtual {v1}, Lcom/android/internal/telephony/uicc/IccRecords;->getOperatorNumeric()Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    .line 437
     :cond_3
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CDMALTEPhone;->mIccRecords:Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -745,11 +736,11 @@
 
     .line 438
     .restart local v1    # "curIccRecords":Lcom/android/internal/telephony/uicc/IccRecords;
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     instance-of v3, v1, Lcom/android/internal/telephony/uicc/RuimRecords;
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
     move-object v0, v1
 

@@ -15,7 +15,7 @@
 # static fields
 .field private static final ACTION_TURN_WIFI_OFF:Ljava/lang/String; = "com.android.server.WifiService.ACTION_TURN_WIFI_OFF"
 
-.field private static final ICON_NETWORKS_AVAILABLE:I = 0x108065f
+.field private static final ICON_NETWORKS_AVAILABLE:I = #android:drawable@stat_notify_wifi_in_range#t
 
 .field private static final NUM_SCANS_BEFORE_ACTUALLY_SCANNING:I = 0x3
 
@@ -508,7 +508,7 @@
 
     move-result-object v6
 
-    const v7, 0x1140015
+    const v7, #android:plurals@wifi_available#t
 
     invoke-virtual {v6, v7, p2}, Landroid/content/res/Resources;->getQuantityText(II)Ljava/lang/CharSequence;
 
@@ -522,7 +522,7 @@
 
     move-result-object v6
 
-    const v7, 0x1140016
+    const v7, #android:plurals@wifi_available_detailed#t
 
     invoke-virtual {v6, v7, p2}, Landroid/content/res/Resources;->getQuantityText(II)Ljava/lang/CharSequence;
 
@@ -541,7 +541,7 @@
 
     move-result-object v6
 
-    const v7, 0x106005c
+    const v7, #android:color@system_notification_accent_color#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -551,7 +551,7 @@
     .local v0, "color":I
     iget-object v6, p0, Lcom/android/server/wifi/WifiNotificationController;->mContext:Landroid/content/Context;
 
-    const v7, 0x10400da
+    const v7, #android:string@notify_turn_wifi_off_title#t
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -599,7 +599,7 @@
 
     move-result-object v6
 
-    const v7, 0x108065f
+    const v7, #android:drawable@stat_notify_wifi_in_range#t
 
     invoke-virtual {v6, v7}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -689,7 +689,7 @@
     .line 275
     const/4 v6, 0x0
 
-    const v7, 0x108065f
+    const v7, #android:drawable@stat_notify_wifi_in_range#t
 
     iget-object v8, p0, Lcom/android/server/wifi/WifiNotificationController;->mNotification:Landroid/app/Notification;
 
@@ -748,7 +748,7 @@
     :cond_5
     const/4 v6, 0x0
 
-    const v7, 0x108065f
+    const v7, #android:drawable@stat_notify_wifi_in_range#t
 
     sget-object v8, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 

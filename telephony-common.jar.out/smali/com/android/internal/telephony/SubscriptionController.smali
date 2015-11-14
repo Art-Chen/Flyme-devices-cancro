@@ -82,6 +82,8 @@
 
 .field private mSubInfoReady:Z
 
+.field protected mTelecomManager:Landroid/telecom/TelecomManager;
+
 .field protected mTelephonyManager:Landroid/telephony/TelephonyManager;
 
 
@@ -181,6 +183,14 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/SubscriptionController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    iget-object v0, p0, Lcom/android/internal/telephony/SubscriptionController;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/telecom/TelecomManager;->from(Landroid/content/Context;)Landroid/telecom/TelecomManager;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/internal/telephony/SubscriptionController;->mTelecomManager:Landroid/telecom/TelecomManager;
 
     .line 221
     const-string v0, "isub"
@@ -8795,10 +8805,12 @@
 .end method
 
 .method public updateUserPrefs(Z)V
-    .locals 11
+    .locals 12
     .param p1, "setDds"    # Z
 
     .prologue
+    const/4 v11, 0x2
+
     const/4 v10, 0x0
 
     invoke-virtual {p0}, Lcom/android/internal/telephony/SubscriptionController;->getActiveSubscriptionInfoList()Ljava/util/List;
@@ -9020,15 +9032,23 @@
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/SubscriptionController;->logd(Ljava/lang/String;)V
 
-    const/4 v8, 0x2
-
-    if-ge v4, v8, :cond_4
+    if-ge v4, v11, :cond_4
 
     invoke-virtual {p0, v10}, Lcom/android/internal/telephony/SubscriptionController;->setSMSPromptEnabled(Z)V
 
+    :cond_4
+    iget-object v8, p0, Lcom/android/internal/telephony/SubscriptionController;->mTelecomManager:Landroid/telecom/TelecomManager;
+
+    invoke-virtual {v8}, Landroid/telecom/TelecomManager;->getAllPhoneAccountsCount()I
+
+    move-result v8
+
+    if-ge v8, v11, :cond_5
+
     invoke-virtual {p0, v10}, Lcom/android/internal/telephony/SubscriptionController;->setVoicePromptEnabled(Z)V
 
-    :cond_4
+    .line 787
+    :cond_5
     if-eqz v5, :cond_0
 
     invoke-virtual {p0}, Lcom/android/internal/telephony/SubscriptionController;->getDefaultSubId()I
@@ -9039,7 +9059,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_5
+    if-nez v8, :cond_6
 
     invoke-virtual {v5}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
@@ -9047,8 +9067,8 @@
 
     invoke-direct {p0, v8}, Lcom/android/internal/telephony/SubscriptionController;->setDefaultFallbackSubId(I)V
 
-    .line 787
-    :cond_5
+    .line 799
+    :cond_6
     invoke-virtual {p0}, Lcom/android/internal/telephony/SubscriptionController;->getDefaultDataSubId()I
 
     move-result v0
@@ -9059,24 +9079,21 @@
     move-result v1
 
     .local v1, "ddsSubState":I
-    if-nez p1, :cond_6
+    if-nez p1, :cond_7
 
+    if-nez v1, :cond_9
+
+    :cond_7
     if-nez v1, :cond_8
-
-    .line 799
-    :cond_6
-    if-nez v1, :cond_7
 
     invoke-virtual {v5}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
     move-result v0
 
-    .line 815
-    :cond_7
+    :cond_8
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/SubscriptionController;->setDefaultDataSubId(I)V
 
-    .line 818
-    :cond_8
+    :cond_9
     invoke-virtual {p0}, Lcom/android/internal/telephony/SubscriptionController;->getDefaultVoiceSubId()I
 
     move-result v8
@@ -9085,13 +9102,13 @@
 
     move-result v8
 
-    if-nez v8, :cond_9
+    if-nez v8, :cond_a
 
     invoke-virtual {p0}, Lcom/android/internal/telephony/SubscriptionController;->isVoicePromptEnabled()Z
 
     move-result v8
 
-    if-nez v8, :cond_9
+    if-nez v8, :cond_a
 
     invoke-virtual {v5}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
@@ -9099,7 +9116,7 @@
 
     invoke-virtual {p0, v8}, Lcom/android/internal/telephony/SubscriptionController;->setDefaultVoiceSubId(I)V
 
-    :cond_9
+    :cond_a
     invoke-virtual {p0}, Lcom/android/internal/telephony/SubscriptionController;->getDefaultSmsSubId()I
 
     move-result v8
@@ -9108,13 +9125,13 @@
 
     move-result v8
 
-    if-nez v8, :cond_a
+    if-nez v8, :cond_b
 
     invoke-virtual {p0}, Lcom/android/internal/telephony/SubscriptionController;->isSMSPromptEnabled()Z
 
     move-result v8
 
-    if-nez v8, :cond_a
+    if-nez v8, :cond_b
 
     invoke-virtual {v5}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
@@ -9122,7 +9139,7 @@
 
     invoke-virtual {p0, v8}, Lcom/android/internal/telephony/SubscriptionController;->setDefaultSmsSubId(I)V
 
-    :cond_a
+    :cond_b
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V

@@ -249,7 +249,7 @@
 
     move-result-object v0
 
-    const v1, 0x11200a5
+    const v1, #android:bool@config_sim_refresh_for_dual_mode_card#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2677,7 +2677,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120077
+    const v1, #android:bool@skip_radio_power_off_on_sim_refresh_reset#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2975,7 +2975,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120083
+    const v1, #android:bool@config_requireRadioPowerOffOnSimRefreshReset#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

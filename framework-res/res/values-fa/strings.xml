@@ -140,6 +140,8 @@
     <string name="perf_profile_pwrsv">ذخیره نیرو</string>
     <string name="perf_profile_bal">متعادل</string>
     <string name="perf_profile_perf">کارایی</string>
+    <string name="perf_profile_bias_power">بازدهی</string>
+    <string name="perf_profile_bias_perf">سریع</string>
     <string name="theme_install_error_title">موفق به نصب تم نشد</string>
     <string name="theme_install_error_message">%s نصب نشد</string>
     <string name="theme_reset_notification_title">تنظیم مجدد تم</string>
@@ -215,6 +217,8 @@
     <string name="silent_mode_none">هیچ‌کدام</string>
     <string name="subscription_change_disabled_wifi_ap">نقطه اتصال قابل حمل وای‌فای به دلیل تغییر تعرفه سیم کارت، غیرفعال شد</string>
     <string name="notify_turn_wifi_off_title">خاموش کردن وای‌فای</string>
+    <string name="permlab_thirdPartyKeyguard">قفل صفحه دیگر</string>
+    <string name="permdesc_thirdPartyKeyguard">به برنامه اجازه می‌دهد تا به عنوان یک قفل صفحه غیرایمن استفاده شود.</string>
     <string name="numeric_date_template" formatted="false">%s/%s/%s</string>
     <string name="month_day_year" formatted="false">%-e %B %Y</string>
     <string name="time_of_day" formatted="false">%-k:%M:%S</string>

@@ -576,7 +576,7 @@
 
     move-result-object v0
 
-    const v1, 0x112005d
+    const v1, #android:bool@config_voice_capable#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -675,10 +675,9 @@
     .param p2, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1145
-    const v0, 0x107004a
+    const v0, #android:array@origin_carrier_names#t
 
-    const v1, 0x107004b
+    const v1, #android:array@locale_carrier_names#t
 
     invoke-static {p1, p2, v0, v1}, Landroid/util/NativeTextHelper;->getLocalString(Landroid/content/Context;Ljava/lang/String;II)Ljava/lang/String;
 
@@ -2286,7 +2285,7 @@
 
     move-result-object v1
 
-    const v2, 0x11200b0
+    const v2, #android:bool@config_feature_iwlan_enabled#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2610,7 +2609,7 @@
 
     move-result-object v4
 
-    const v5, 0x1070049
+    const v5, #android:array@networks_not_clear_data#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -3453,7 +3452,7 @@
 
     move-result-object v4
 
-    const v5, 0x11200a6
+    const v5, #android:bool@config_monitor_locale_change#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -4116,7 +4115,7 @@
 
     move-result-object v0
 
-    const v1, 0x112009e
+    const v1, #android:bool@config_switch_phone_on_voice_reg_state_change#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

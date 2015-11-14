@@ -924,63 +924,50 @@
     :goto_3
     iput-object v2, p0, Landroid/media/MediaRouter$RouteInfo;->mStatus:Ljava/lang/CharSequence;
 
-    .line 1649
     const/4 v2, 0x1
 
     goto :goto_1
 
-    .line 1628
     .end local v0    # "resId":I
     :pswitch_2
-    const v0, 0x10406b1
+    const v0, #android:string@media_route_status_scanning#t
 
-    .line 1629
     .restart local v0    # "resId":I
     goto :goto_2
 
-    .line 1631
     .end local v0    # "resId":I
     :pswitch_3
-    const v0, 0x10406b2
+    const v0, #android:string@media_route_status_connecting#t
 
-    .line 1632
     .restart local v0    # "resId":I
     goto :goto_2
 
-    .line 1634
     .end local v0    # "resId":I
     :pswitch_4
-    const v0, 0x10406b3
+    const v0, #android:string@media_route_status_available#t
 
-    .line 1635
     .restart local v0    # "resId":I
     goto :goto_2
 
-    .line 1637
     .end local v0    # "resId":I
     :pswitch_5
-    const v0, 0x10406b4
+    const v0, #android:string@media_route_status_not_available#t
 
-    .line 1638
     .restart local v0    # "resId":I
     goto :goto_2
 
-    .line 1640
     .end local v0    # "resId":I
     :pswitch_6
-    const v0, 0x10406b5
+    const v0, #android:string@media_route_status_in_use#t
 
-    .line 1641
     .restart local v0    # "resId":I
     goto :goto_2
 
-    .line 1648
     :cond_2
     const/4 v2, 0x0
 
     goto :goto_3
 
-    .line 1607
     nop
 
     :pswitch_data_0

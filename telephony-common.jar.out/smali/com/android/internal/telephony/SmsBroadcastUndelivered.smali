@@ -573,7 +573,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040114
+    const v3, #android:string@config_partial_segment_expire_age#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

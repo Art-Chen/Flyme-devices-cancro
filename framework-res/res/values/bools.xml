@@ -78,6 +78,7 @@
     <bool name="config_enable_emergency_call_while_sim_locked">true</bool>
     <bool name="config_singleStageCameraKey">false</bool>
     <bool name="config_allowAutoBrightnessWhileDozing">false</bool>
+    <bool name="config_autoBrightnessResetAmbientLuxAfterWarmUp">true</bool>
     <bool name="config_deviceHasVariableButtonBrightness">true</bool>
     <bool name="config_swipeDisambiguation">true</bool>
     <bool name="config_enableWallpaperService">true</bool>
@@ -172,7 +173,6 @@
     <bool name="config_radio_reset_on_regular_deactivation">false</bool>
     <bool name="use_motion_accel">false</bool>
     <bool name="config_enable_mms_with_mobile_data_off">true</bool>
-    <bool name="config_setZenModeWhenSilentModeOn">false</bool>
     <bool name="config_telephony_ESN_Tracker_enabled">false</bool>
     <bool name="config_feature_iwlan_enabled">false</bool>
     <bool name="config_combined_signal">true</bool>

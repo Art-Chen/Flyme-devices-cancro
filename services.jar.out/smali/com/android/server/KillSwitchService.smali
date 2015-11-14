@@ -81,7 +81,7 @@
 
     move-result-object v7
 
-    const v8, 0x104011b
+    const v8, #android:string@config_killSwitchLib#t
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -95,7 +95,7 @@
 
     move-result-object v7
 
-    const v8, 0x104011c
+    const v8, #android:string@config_killSwitchClass#t
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -188,7 +188,7 @@
 
     move-result-object v7
 
-    const v8, 0x1070052
+    const v8, #android:array@config_packagesAllowedAccessToKillSwitch#t
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

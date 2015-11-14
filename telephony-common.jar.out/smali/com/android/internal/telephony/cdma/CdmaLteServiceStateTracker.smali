@@ -3293,7 +3293,7 @@
 
     move-result-object v43
 
-    const v44, 0x11200b6
+    const v44, #android:bool@config_LTE_eri_for_network_name#t
 
     invoke-virtual/range {v43 .. v44}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -4558,7 +4558,7 @@
 
     move-result-object v43
 
-    const v44, 0x10401a0
+    const v44, #android:string@roamingTextSearching#t
 
     invoke-virtual/range {v43 .. v44}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -5082,7 +5082,7 @@
 
     move-result-object v2
 
-    const v3, 0x112009e
+    const v3, #android:bool@config_switch_phone_on_voice_reg_state_change#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -5101,7 +5101,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e0066
+    const v3, #android:integer@config_volte_replacement_rat#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 

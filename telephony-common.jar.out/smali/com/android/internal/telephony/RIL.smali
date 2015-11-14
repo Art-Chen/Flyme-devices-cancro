@@ -7161,7 +7161,7 @@
 
     move-result-object v5
 
-    const v6, 0x10400ef
+    const v6, #android:string@config_datause_iface#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -14892,7 +14892,7 @@
 
     move-result-object v23
 
-    const v24, 0x11200bc
+    const v24, #android:bool@config_samsung_stk#t
 
     invoke-virtual/range {v23 .. v24}, Landroid/content/res/Resources;->getBoolean(I)Z
 

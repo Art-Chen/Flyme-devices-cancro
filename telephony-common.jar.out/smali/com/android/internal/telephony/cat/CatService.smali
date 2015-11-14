@@ -1864,7 +1864,7 @@
 
     iget-object v2, v0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v3, 0x104069f
+    const v3, #android:string@launchBrowserDefault#t
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1957,7 +1957,7 @@
 
     iget-object v2, v0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v3, 0x104069e
+    const v3, #android:string@sending#t
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -2015,7 +2015,7 @@
 
     iget-object v2, v0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v3, 0x10406a0
+    const v3, #android:string@SetupCallDefault#t
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -2061,7 +2061,7 @@
 
     move-result-object v2
 
-    const v3, 0x1120088
+    const v3, #android:bool@config_stkNoAlphaUsrCnf#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
     :try_end_0
@@ -3807,7 +3807,7 @@
 
     move-result-object v0
 
-    const v1, 0x11200bc
+    const v1, #android:bool@config_samsung_stk#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

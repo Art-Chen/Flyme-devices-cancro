@@ -215,6 +215,8 @@
     <string name="silent_mode_none">Geen</string>
     <string name="subscription_change_disabled_wifi_ap">Deaktiveer Wi-Fi warmkol weens SIM inskrywing verandering</string>
     <string name="notify_turn_wifi_off_title">Skakel Wi-Fi af</string>
+    <string name="permlab_thirdPartyKeyguard">derde party slotskerm</string>
+    <string name="permdesc_thirdPartyKeyguard">"Laat 'n toep toe om gebruik te word as 'n onveilige skermslot."</string>
     <string name="numeric_date_template" formatted="false">%s/%s/%s</string>
     <string name="month_day_year" formatted="false">%d %B %Y</string>
     <string name="time_of_day" formatted="false">%-l:%M:%S %p</string>

@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120069
+    const v1, #android:bool@config_duplicate_port_omadm_wappush#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

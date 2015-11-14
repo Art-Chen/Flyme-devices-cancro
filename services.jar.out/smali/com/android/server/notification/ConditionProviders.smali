@@ -130,7 +130,7 @@
 
     const-string v5, "system.condition.providers"
 
-    const v6, 0x107004c
+    const v6, #android:array@config_system_condition_providers#t
 
     invoke-static {v3, v5, v6}, Lcom/android/server/notification/PropConfig;->getStringArray(Landroid/content/Context;Ljava/lang/String;I)[Ljava/lang/String;
 
@@ -2119,43 +2119,35 @@
     .locals 2
 
     .prologue
-    .line 87
     new-instance v0, Lcom/android/server/notification/ManagedServices$Config;
 
     invoke-direct {v0}, Lcom/android/server/notification/ManagedServices$Config;-><init>()V
 
-    .line 88
     .local v0, "c":Lcom/android/server/notification/ManagedServices$Config;
     const-string v1, "condition provider"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->caption:Ljava/lang/String;
 
-    .line 89
     const-string v1, "android.service.notification.ConditionProviderService"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->serviceInterface:Ljava/lang/String;
 
-    .line 90
     const-string v1, "enabled_condition_providers"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->secureSettingName:Ljava/lang/String;
 
-    .line 91
     const-string v1, "android.permission.BIND_CONDITION_PROVIDER_SERVICE"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->bindPermission:Ljava/lang/String;
 
-    .line 92
     const-string v1, "android.settings.ACTION_CONDITION_PROVIDER_SETTINGS"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->settingsAction:Ljava/lang/String;
 
-    .line 93
-    const v1, 0x1040624
+    const v1, #android:string@condition_provider_service_binding_label#t
 
     iput v1, v0, Lcom/android/server/notification/ManagedServices$Config;->clientLabel:I
 
-    .line 94
     return-object v0
 .end method
 

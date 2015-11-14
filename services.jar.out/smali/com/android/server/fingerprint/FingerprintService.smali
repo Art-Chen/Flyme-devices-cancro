@@ -862,7 +862,7 @@
 .end method
 
 .method public getEnrolledFingerprints(Landroid/os/IBinder;I)Ljava/util/List;
-    .locals 6
+    .locals 7
     .param p1, "token"    # Landroid/os/IBinder;
     .param p2, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -878,7 +878,8 @@
     .end annotation
 
     .prologue
-    .line 399
+    const/4 v6, 0x0
+
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -929,15 +930,27 @@
 
     throw v4
 
-    .line 407
     :cond_0
+    if-eqz p2, :cond_1
+
+    const-string v4, "FingerprintService"
+
+    const-string v5, "fingerprints disabled for secondary users."
+
+    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    :goto_0
+    return-object v0
+
+    :cond_1
     invoke-virtual {p0}, Lcom/android/server/fingerprint/FingerprintService;->nativeGetEnrollments()[Landroid/hardware/fingerprint/Fingerprint;
 
     move-result-object v2
 
-    .line 408
     .local v2, "nativeFingerprintsArray":[Landroid/hardware/fingerprint/Fingerprint;
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -945,35 +958,32 @@
 
     .line 410
     .local v1, "nativeFingerprints":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
-    :goto_0
+    :goto_1
     iget-object v4, p0, Lcom/android/server/fingerprint/FingerprintService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v4
 
-    invoke-static {v4, p2}, Landroid/service/fingerprint/FingerprintUtils;->getFingerprintsForUser(Landroid/content/ContentResolver;I)Ljava/util/List;
+    invoke-static {v4, v6}, Landroid/service/fingerprint/FingerprintUtils;->getFingerprintsForUser(Landroid/content/ContentResolver;I)Ljava/util/List;
 
     move-result-object v3
 
-    .line 413
     .local v3, "settingsFingerprints":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
-    invoke-direct {p0, v1, v3, p2}, Lcom/android/server/fingerprint/FingerprintService;->mergeAndUpdateSettingsFingerprints(Ljava/util/List;Ljava/util/List;I)Ljava/util/List;
+    invoke-direct {p0, v1, v3, v6}, Lcom/android/server/fingerprint/FingerprintService;->mergeAndUpdateSettingsFingerprints(Ljava/util/List;Ljava/util/List;I)Ljava/util/List;
 
     move-result-object v0
 
-    .line 416
     .local v0, "fingerprints":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
-    return-object v0
+    goto :goto_0
 
-    .line 408
     .end local v0    # "fingerprints":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
     .end local v1    # "nativeFingerprints":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
     .end local v3    # "settingsFingerprints":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
-    :cond_1
+    :cond_2
     sget-object v1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public getNumEnrollmentSteps()I

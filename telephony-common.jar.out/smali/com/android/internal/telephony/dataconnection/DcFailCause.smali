@@ -725,7 +725,7 @@
 
     move-result-object v0
 
-    const v1, 0x112009d
+    const v1, #android:bool@config_restart_radio_on_pdp_fail_regular_deactivation#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -920,7 +920,7 @@
 
     move-result-object v1
 
-    const v2, 0x11200a9
+    const v2, #android:bool@config_reject_ggsn_perm_failure#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -941,7 +941,7 @@
 
     move-result-object v1
 
-    const v2, 0x11200aa
+    const v2, #android:bool@config_protocol_errors_perm_failure#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 

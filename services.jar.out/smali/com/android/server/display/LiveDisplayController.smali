@@ -2610,7 +2610,7 @@
     .param p1, "state"    # Lcom/android/server/twilight/TwilightState;
 
     .prologue
-    const v9, 0x10400cd
+    const v9, #android:string@live_display_hint#t
 
     const/4 v6, 0x0
 
@@ -2708,7 +2708,7 @@
 
     move-result-object v7
 
-    const v8, 0x10400c2
+    const v8, #android:string@live_display_title#t
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2732,7 +2732,7 @@
 
     move-result-object v6
 
-    const v7, 0x1080370
+    const v7, #android:drawable@ic_livedisplay_notif#t
 
     invoke-virtual {v6, v7}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -3224,7 +3224,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e0088
+    const v2, #android:integer@config_dayColorTemperature#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -3239,7 +3239,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e0089
+    const v2, #android:integer@config_nightColorTemperature#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -3254,7 +3254,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e008a
+    const v2, #android:integer@config_outdoorAmbientLux#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

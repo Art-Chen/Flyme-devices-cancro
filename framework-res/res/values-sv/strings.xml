@@ -211,6 +211,7 @@
     <string name="permdesc_accessFingerprintService">Tillåter en app att komma åt fingeravtryckstjänst. Appen kan lägga till, ta bort, byta namn och autentisera mot fingeravtryck</string>
     <string name="permlab_resetBatteryStats">återställa batteristatistik</string>
     <string name="permdesc_resetBatteryStats">Tillåter en app att återställa nuvarande lågnivådata för batterianvändning.</string>
+    <string name="silent_mode_priority">Prioritet</string>
     <string name="numeric_date_template" formatted="false">%s-%s-%s</string>
     <string name="month_day_year" formatted="false">%-e %B %Y</string>
     <string name="time_of_day" formatted="false">%H:%M:%S</string>

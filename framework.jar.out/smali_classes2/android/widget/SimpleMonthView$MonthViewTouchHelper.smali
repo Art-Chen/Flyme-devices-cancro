@@ -231,7 +231,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040756
+    const v2, #android:string@item_is_selected#t
 
     const/4 v3, 0x1
 

@@ -67,14 +67,131 @@
 .end method
 
 .method public static computeLastCycleBoundary(JLandroid/net/NetworkPolicy;)J
-    .locals 8
+    .locals 10
     .param p0, "currentTime"    # J
     .param p2, "policy"    # Landroid/net/NetworkPolicy;
 
     .prologue
-    const/4 v6, 0x0
+    const/16 v9, 0xd
 
-    const/4 v5, 0x1
+    const/16 v8, 0xc
+
+    const/16 v7, 0xb
+
+    const/4 v6, -0x1
+
+    const/4 v5, 0x0
+
+    iget v3, p2, Landroid/net/NetworkPolicy;->cycleDay:I
+
+    if-ne v3, v6, :cond_0
+
+    new-instance v3, Ljava/lang/IllegalArgumentException;
+
+    const-string v4, "Unable to compute boundary without cycleDay"
+
+    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    :cond_0
+    new-instance v2, Ljava/util/GregorianCalendar;
+
+    iget-object v3, p2, Landroid/net/NetworkPolicy;->cycleTimezone:Ljava/lang/String;
+
+    invoke-static {v3}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object v3
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v4
+
+    invoke-direct {v2, v3, v4}, Ljava/util/GregorianCalendar;-><init>(Ljava/util/TimeZone;Ljava/util/Locale;)V
+
+    .local v2, "now":Ljava/util/GregorianCalendar;
+    invoke-virtual {v2, p0, p1}, Ljava/util/GregorianCalendar;->setTimeInMillis(J)V
+
+    invoke-virtual {v2}, Ljava/util/GregorianCalendar;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/GregorianCalendar;
+
+    .local v0, "cycle":Ljava/util/GregorianCalendar;
+    invoke-virtual {v0, v7, v5}, Ljava/util/GregorianCalendar;->set(II)V
+
+    invoke-virtual {v0, v8, v5}, Ljava/util/GregorianCalendar;->set(II)V
+
+    invoke-virtual {v0, v9, v5}, Ljava/util/GregorianCalendar;->set(II)V
+
+    iget v3, p2, Landroid/net/NetworkPolicy;->cycleDay:I
+
+    invoke-static {v0, v3}, Landroid/net/NetworkPolicyManager;->snapToCycleDay(Ljava/util/GregorianCalendar;I)V
+
+    invoke-virtual {v0, v2}, Ljava/util/GregorianCalendar;->compareTo(Ljava/util/Calendar;)I
+
+    move-result v3
+
+    if-ltz v3, :cond_1
+
+    invoke-virtual {v2}, Ljava/util/GregorianCalendar;->clone()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/GregorianCalendar;
+
+    .local v1, "lastMonth":Ljava/util/GregorianCalendar;
+    invoke-virtual {v1, v7, v5}, Ljava/util/GregorianCalendar;->set(II)V
+
+    invoke-virtual {v1, v8, v5}, Ljava/util/GregorianCalendar;->set(II)V
+
+    invoke-virtual {v1, v9, v5}, Ljava/util/GregorianCalendar;->set(II)V
+
+    const/4 v3, 0x5
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v1, v3, v4}, Ljava/util/GregorianCalendar;->set(II)V
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v1, v3, v6}, Ljava/util/GregorianCalendar;->add(II)V
+
+    invoke-virtual {v1}, Ljava/util/GregorianCalendar;->getTimeInMillis()J
+
+    move-result-wide v4
+
+    invoke-virtual {v0, v4, v5}, Ljava/util/GregorianCalendar;->setTimeInMillis(J)V
+
+    iget v3, p2, Landroid/net/NetworkPolicy;->cycleDay:I
+
+    invoke-static {v0, v3}, Landroid/net/NetworkPolicyManager;->snapToCycleDay(Ljava/util/GregorianCalendar;I)V
+
+    .end local v1    # "lastMonth":Ljava/util/GregorianCalendar;
+    :cond_1
+    invoke-virtual {v0}, Ljava/util/GregorianCalendar;->getTimeInMillis()J
+
+    move-result-wide v4
+
+    return-wide v4
+.end method
+
+.method public static computeNextCycleBoundary(JLandroid/net/NetworkPolicy;)J
+    .locals 10
+    .param p0, "currentTime"    # J
+    .param p2, "policy"    # Landroid/net/NetworkPolicy;
+
+    .prologue
+    const/16 v9, 0xd
+
+    const/16 v8, 0xc
+
+    const/16 v7, 0xb
+
+    const/4 v6, 0x1
+
+    const/4 v5, 0x0
 
     .line 191
     iget v3, p2, Landroid/net/NetworkPolicy;->cycleDay:I
@@ -94,186 +211,80 @@
 
     .line 195
     :cond_0
-    new-instance v2, Landroid/text/format/Time;
+    new-instance v2, Ljava/util/GregorianCalendar;
 
     iget-object v3, p2, Landroid/net/NetworkPolicy;->cycleTimezone:Ljava/lang/String;
 
-    invoke-direct {v2, v3}, Landroid/text/format/Time;-><init>(Ljava/lang/String;)V
+    invoke-static {v3}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
-    .line 196
-    .local v2, "now":Landroid/text/format/Time;
-    invoke-virtual {v2, p0, p1}, Landroid/text/format/Time;->set(J)V
+    move-result-object v3
 
-    .line 199
-    new-instance v0, Landroid/text/format/Time;
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
-    invoke-direct {v0, v2}, Landroid/text/format/Time;-><init>(Landroid/text/format/Time;)V
+    move-result-object v4
 
-    .line 200
-    .local v0, "cycle":Landroid/text/format/Time;
-    iput v6, v0, Landroid/text/format/Time;->second:I
+    invoke-direct {v2, v3, v4}, Ljava/util/GregorianCalendar;-><init>(Ljava/util/TimeZone;Ljava/util/Locale;)V
 
-    iput v6, v0, Landroid/text/format/Time;->minute:I
+    .local v2, "now":Ljava/util/GregorianCalendar;
+    invoke-virtual {v2, p0, p1}, Ljava/util/GregorianCalendar;->setTimeInMillis(J)V
 
-    iput v6, v0, Landroid/text/format/Time;->hour:I
+    invoke-virtual {v2}, Ljava/util/GregorianCalendar;->clone()Ljava/lang/Object;
 
-    .line 201
+    move-result-object v0
+
+    check-cast v0, Ljava/util/GregorianCalendar;
+
+    .local v0, "cycle":Ljava/util/GregorianCalendar;
+    invoke-virtual {v0, v7, v5}, Ljava/util/GregorianCalendar;->set(II)V
+
+    invoke-virtual {v0, v8, v5}, Ljava/util/GregorianCalendar;->set(II)V
+
+    invoke-virtual {v0, v9, v5}, Ljava/util/GregorianCalendar;->set(II)V
+
     iget v3, p2, Landroid/net/NetworkPolicy;->cycleDay:I
 
-    invoke-static {v0, v3}, Landroid/net/NetworkPolicyManager;->snapToCycleDay(Landroid/text/format/Time;I)V
+    invoke-static {v0, v3}, Landroid/net/NetworkPolicyManager;->snapToCycleDay(Ljava/util/GregorianCalendar;I)V
 
-    .line 203
-    invoke-static {v0, v2}, Landroid/text/format/Time;->compare(Landroid/text/format/Time;Landroid/text/format/Time;)I
-
-    move-result v3
-
-    if-ltz v3, :cond_1
-
-    .line 206
-    new-instance v1, Landroid/text/format/Time;
-
-    invoke-direct {v1, v2}, Landroid/text/format/Time;-><init>(Landroid/text/format/Time;)V
-
-    .line 207
-    .local v1, "lastMonth":Landroid/text/format/Time;
-    iput v6, v1, Landroid/text/format/Time;->second:I
-
-    iput v6, v1, Landroid/text/format/Time;->minute:I
-
-    iput v6, v1, Landroid/text/format/Time;->hour:I
-
-    .line 208
-    iput v5, v1, Landroid/text/format/Time;->monthDay:I
-
-    .line 209
-    iget v3, v1, Landroid/text/format/Time;->month:I
-
-    add-int/lit8 v3, v3, -0x1
-
-    iput v3, v1, Landroid/text/format/Time;->month:I
-
-    .line 210
-    invoke-virtual {v1, v5}, Landroid/text/format/Time;->normalize(Z)J
-
-    .line 212
-    invoke-virtual {v0, v1}, Landroid/text/format/Time;->set(Landroid/text/format/Time;)V
-
-    .line 213
-    iget v3, p2, Landroid/net/NetworkPolicy;->cycleDay:I
-
-    invoke-static {v0, v3}, Landroid/net/NetworkPolicyManager;->snapToCycleDay(Landroid/text/format/Time;I)V
-
-    .line 216
-    .end local v1    # "lastMonth":Landroid/text/format/Time;
-    :cond_1
-    invoke-virtual {v0, v5}, Landroid/text/format/Time;->toMillis(Z)J
-
-    move-result-wide v4
-
-    return-wide v4
-.end method
-
-.method public static computeNextCycleBoundary(JLandroid/net/NetworkPolicy;)J
-    .locals 8
-    .param p0, "currentTime"    # J
-    .param p2, "policy"    # Landroid/net/NetworkPolicy;
-
-    .prologue
-    const/4 v6, 0x0
-
-    const/4 v5, 0x1
-
-    .line 221
-    iget v3, p2, Landroid/net/NetworkPolicy;->cycleDay:I
-
-    const/4 v4, -0x1
-
-    if-ne v3, v4, :cond_0
-
-    .line 222
-    new-instance v3, Ljava/lang/IllegalArgumentException;
-
-    const-string v4, "Unable to compute boundary without cycleDay"
-
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-
-    .line 225
-    :cond_0
-    new-instance v2, Landroid/text/format/Time;
-
-    iget-object v3, p2, Landroid/net/NetworkPolicy;->cycleTimezone:Ljava/lang/String;
-
-    invoke-direct {v2, v3}, Landroid/text/format/Time;-><init>(Ljava/lang/String;)V
-
-    .line 226
-    .local v2, "now":Landroid/text/format/Time;
-    invoke-virtual {v2, p0, p1}, Landroid/text/format/Time;->set(J)V
-
-    .line 229
-    new-instance v0, Landroid/text/format/Time;
-
-    invoke-direct {v0, v2}, Landroid/text/format/Time;-><init>(Landroid/text/format/Time;)V
-
-    .line 230
-    .local v0, "cycle":Landroid/text/format/Time;
-    iput v6, v0, Landroid/text/format/Time;->second:I
-
-    iput v6, v0, Landroid/text/format/Time;->minute:I
-
-    iput v6, v0, Landroid/text/format/Time;->hour:I
-
-    .line 231
-    iget v3, p2, Landroid/net/NetworkPolicy;->cycleDay:I
-
-    invoke-static {v0, v3}, Landroid/net/NetworkPolicyManager;->snapToCycleDay(Landroid/text/format/Time;I)V
-
-    .line 233
-    invoke-static {v0, v2}, Landroid/text/format/Time;->compare(Landroid/text/format/Time;Landroid/text/format/Time;)I
+    invoke-virtual {v0, v2}, Ljava/util/GregorianCalendar;->compareTo(Ljava/util/Calendar;)I
 
     move-result v3
 
     if-gtz v3, :cond_1
 
-    .line 236
-    new-instance v1, Landroid/text/format/Time;
+    invoke-virtual {v2}, Ljava/util/GregorianCalendar;->clone()Ljava/lang/Object;
 
-    invoke-direct {v1, v2}, Landroid/text/format/Time;-><init>(Landroid/text/format/Time;)V
+    move-result-object v1
 
-    .line 237
-    .local v1, "nextMonth":Landroid/text/format/Time;
-    iput v6, v1, Landroid/text/format/Time;->second:I
+    check-cast v1, Ljava/util/GregorianCalendar;
 
-    iput v6, v1, Landroid/text/format/Time;->minute:I
+    .local v1, "nextMonth":Ljava/util/GregorianCalendar;
+    invoke-virtual {v1, v7, v5}, Ljava/util/GregorianCalendar;->set(II)V
 
-    iput v6, v1, Landroid/text/format/Time;->hour:I
+    invoke-virtual {v1, v8, v5}, Ljava/util/GregorianCalendar;->set(II)V
 
-    .line 238
-    iput v5, v1, Landroid/text/format/Time;->monthDay:I
+    invoke-virtual {v1, v9, v5}, Ljava/util/GregorianCalendar;->set(II)V
 
-    .line 239
-    iget v3, v1, Landroid/text/format/Time;->month:I
+    const/4 v3, 0x5
 
-    add-int/lit8 v3, v3, 0x1
+    invoke-virtual {v1, v3, v6}, Ljava/util/GregorianCalendar;->set(II)V
 
-    iput v3, v1, Landroid/text/format/Time;->month:I
+    const/4 v3, 0x2
 
-    .line 240
-    invoke-virtual {v1, v5}, Landroid/text/format/Time;->normalize(Z)J
+    invoke-virtual {v1, v3, v6}, Ljava/util/GregorianCalendar;->add(II)V
 
-    .line 242
-    invoke-virtual {v0, v1}, Landroid/text/format/Time;->set(Landroid/text/format/Time;)V
+    invoke-virtual {v1}, Ljava/util/GregorianCalendar;->getTimeInMillis()J
 
-    .line 243
+    move-result-wide v4
+
+    invoke-virtual {v0, v4, v5}, Ljava/util/GregorianCalendar;->setTimeInMillis(J)V
+
     iget v3, p2, Landroid/net/NetworkPolicy;->cycleDay:I
 
-    invoke-static {v0, v3}, Landroid/net/NetworkPolicyManager;->snapToCycleDay(Landroid/text/format/Time;I)V
+    invoke-static {v0, v3}, Landroid/net/NetworkPolicyManager;->snapToCycleDay(Ljava/util/GregorianCalendar;I)V
 
-    .line 246
-    .end local v1    # "nextMonth":Landroid/text/format/Time;
+    .end local v1    # "nextMonth":Ljava/util/GregorianCalendar;
     :cond_1
-    invoke-virtual {v0, v5}, Landroid/text/format/Time;->toMillis(Z)J
+    invoke-virtual {v0}, Ljava/util/GregorianCalendar;->getTimeInMillis()J
 
     move-result-wide v4
 
@@ -286,28 +297,24 @@
     .param p1, "policy"    # I
 
     .prologue
-    .line 307
     const-string v0, "["
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->write(Ljava/lang/String;)V
 
-    .line 308
     and-int/lit8 v0, p1, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 309
     const-string v0, "REJECT_METERED_BACKGROUND"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->write(Ljava/lang/String;)V
 
-    .line 311
+    .line 225
     :cond_0
     const-string v0, "]"
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->write(Ljava/lang/String;)V
 
-    .line 312
     return-void
 .end method
 
@@ -388,49 +395,43 @@
 .end method
 
 .method public static snapToCycleDay(Landroid/text/format/Time;I)V
-    .locals 2
+    .locals 4
     .param p0, "time"    # Landroid/text/format/Time;
     .param p1, "cycleDay"    # I
 
     .prologue
+    new-instance v0, Ljava/util/GregorianCalendar;
+
+    iget-object v1, p0, Landroid/text/format/Time;->timezone:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object v1
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Ljava/util/GregorianCalendar;-><init>(Ljava/util/TimeZone;Ljava/util/Locale;)V
+
+    .local v0, "calendar":Ljava/util/GregorianCalendar;
     const/4 v1, 0x1
 
-    .line 256
-    const/4 v0, 0x4
+    invoke-virtual {p0, v1}, Landroid/text/format/Time;->toMillis(Z)J
 
-    invoke-virtual {p0, v0}, Landroid/text/format/Time;->getActualMaximum(I)I
+    move-result-wide v2
 
-    move-result v0
+    invoke-virtual {v0, v2, v3}, Ljava/util/GregorianCalendar;->setTimeInMillis(J)V
 
-    if-le p1, v0, :cond_0
+    invoke-static {v0, p1}, Landroid/net/NetworkPolicyManager;->snapToCycleDay(Ljava/util/GregorianCalendar;I)V
 
-    .line 258
-    iget v0, p0, Landroid/text/format/Time;->month:I
+    invoke-virtual {v0}, Ljava/util/GregorianCalendar;->getTimeInMillis()J
 
-    add-int/lit8 v0, v0, 0x1
+    move-result-wide v2
 
-    iput v0, p0, Landroid/text/format/Time;->month:I
+    invoke-virtual {p0, v2, v3}, Landroid/text/format/Time;->set(J)V
 
-    .line 259
-    iput v1, p0, Landroid/text/format/Time;->monthDay:I
-
-    .line 260
-    const/4 v0, -0x1
-
-    iput v0, p0, Landroid/text/format/Time;->second:I
-
-    .line 264
-    :goto_0
-    invoke-virtual {p0, v1}, Landroid/text/format/Time;->normalize(Z)J
-
-    .line 265
     return-void
-
-    .line 262
-    :cond_0
-    iput p1, p0, Landroid/text/format/Time;->monthDay:I
-
-    goto :goto_0
 .end method
 
 
@@ -753,6 +754,61 @@
     .line 148
     :catch_0
     move-exception v0
+
+    goto :goto_0
+.end method
+
+.method private static snapToCycleDay(Ljava/util/GregorianCalendar;I)V
+    .locals 5
+    .param p0, "time"    # Ljava/util/GregorianCalendar;
+    .param p1, "cycleDay"    # I
+
+    .prologue
+    const/16 v4, 0xd
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x5
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v2}, Ljava/util/GregorianCalendar;->getActualMaximum(I)I
+
+    move-result v0
+
+    if-le p1, v0, :cond_0
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0, v3}, Ljava/util/GregorianCalendar;->add(II)V
+
+    invoke-virtual {p0, v2, v3}, Ljava/util/GregorianCalendar;->set(II)V
+
+    invoke-virtual {p0, v2, v3}, Ljava/util/GregorianCalendar;->set(II)V
+
+    const/16 v0, 0xb
+
+    invoke-virtual {p0, v0, v1}, Ljava/util/GregorianCalendar;->set(II)V
+
+    const/16 v0, 0xc
+
+    invoke-virtual {p0, v0, v1}, Ljava/util/GregorianCalendar;->set(II)V
+
+    invoke-virtual {p0, v4, v1}, Ljava/util/GregorianCalendar;->set(II)V
+
+    const/16 v0, 0xe
+
+    invoke-virtual {p0, v0, v1}, Ljava/util/GregorianCalendar;->set(II)V
+
+    const/4 v0, -0x1
+
+    invoke-virtual {p0, v4, v0}, Ljava/util/GregorianCalendar;->add(II)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0, v2, p1}, Ljava/util/GregorianCalendar;->set(II)V
 
     goto :goto_0
 .end method

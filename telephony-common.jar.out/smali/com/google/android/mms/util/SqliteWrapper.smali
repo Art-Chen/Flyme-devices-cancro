@@ -27,15 +27,13 @@
     .param p1, "e"    # Landroid/database/sqlite/SQLiteException;
 
     .prologue
-    .line 60
     invoke-static {p1}, Lcom/google/android/mms/util/SqliteWrapper;->isLowMemory(Landroid/database/sqlite/SQLiteException;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 61
-    const v0, 0x10401ba
+    const v0, #android:string@low_memory#t
 
     const/4 v1, 0x0
 

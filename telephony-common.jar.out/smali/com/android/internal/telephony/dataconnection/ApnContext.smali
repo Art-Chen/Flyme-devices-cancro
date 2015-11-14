@@ -741,7 +741,7 @@
 
     move-result-object v1
 
-    const v2, 0x10400f2
+    const v2, #android:string@mobile_provisioning_apn#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

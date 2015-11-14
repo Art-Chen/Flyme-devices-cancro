@@ -289,7 +289,7 @@
 
     move-result-object v2
 
-    const v4, 0x1040089
+    const v4, #android:string@def_wifi_wifihotspot_ssid#t
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -309,7 +309,7 @@
     .line 215
     iget-object v2, p0, Lcom/android/server/wifi/WifiApConfigStore;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040595
+    const v4, #android:string@wifi_tether_configure_ssid_default#t
 
     invoke-virtual {v2, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -327,7 +327,7 @@
 
     move-result-object v2
 
-    const v5, 0x1120004
+    const v5, #android:bool@set_wifi_hotspot_security_none#t
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -347,7 +347,7 @@
 
     move-result-object v2
 
-    const v4, 0x104008a
+    const v4, #android:string@def_wifi_wifihotspot_pass#t
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

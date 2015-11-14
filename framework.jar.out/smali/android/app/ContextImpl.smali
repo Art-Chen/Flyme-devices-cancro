@@ -983,6 +983,20 @@
 
     invoke-virtual {v3, v0}, Landroid/view/DisplayAdjustments;->setActivityToken(Landroid/os/IBinder;)V
 
+    new-instance v3, Landroid/app/ContextImpl$ApplicationContentResolver;
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p2
+
+    move-object/from16 v2, p5
+
+    invoke-direct {v3, v0, v1, v2}, Landroid/app/ContextImpl$ApplicationContentResolver;-><init>(Landroid/content/Context;Landroid/app/ActivityThread;Landroid/os/UserHandle;)V
+
+    move-object/from16 v0, p0
+
+    iput-object v3, v0, Landroid/app/ContextImpl;->mContentResolver:Landroid/app/ContextImpl$ApplicationContentResolver;
+
     move-object/from16 v0, p3
 
     move-object/from16 v1, p2
@@ -1098,20 +1112,6 @@
     iput-object v3, v0, Landroid/app/ContextImpl;->mOpPackageName:Ljava/lang/String;
 
     :goto_1
-    new-instance v3, Landroid/app/ContextImpl$ApplicationContentResolver;
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p2
-
-    move-object/from16 v2, p5
-
-    invoke-direct {v3, v0, v1, v2}, Landroid/app/ContextImpl$ApplicationContentResolver;-><init>(Landroid/content/Context;Landroid/app/ActivityThread;Landroid/os/UserHandle;)V
-
-    move-object/from16 v0, p0
-
-    iput-object v3, v0, Landroid/app/ContextImpl;->mContentResolver:Landroid/app/ContextImpl$ApplicationContentResolver;
-
     return-void
 
     :cond_5

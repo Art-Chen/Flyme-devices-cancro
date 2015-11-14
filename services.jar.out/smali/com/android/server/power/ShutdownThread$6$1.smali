@@ -47,7 +47,7 @@
     iget-object v0, v0, Lcom/android/server/power/ShutdownThread$6;->this$0:Lcom/android/server/power/ShutdownThread;
 
     # getter for: Lcom/android/server/power/ShutdownThread;->mActionDoneSync:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$500(Lcom/android/server/power/ShutdownThread;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$600(Lcom/android/server/power/ShutdownThread;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -62,7 +62,7 @@
     const/4 v2, 0x0
 
     # setter for: Lcom/android/server/power/ShutdownThread;->isShutdownMusicPlaying:Z
-    invoke-static {v0, v2}, Lcom/android/server/power/ShutdownThread;->access$602(Lcom/android/server/power/ShutdownThread;Z)Z
+    invoke-static {v0, v2}, Lcom/android/server/power/ShutdownThread;->access$702(Lcom/android/server/power/ShutdownThread;Z)Z
 
     .line 782
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$6$1;->this$1:Lcom/android/server/power/ShutdownThread$6;
@@ -70,7 +70,7 @@
     iget-object v0, v0, Lcom/android/server/power/ShutdownThread$6;->this$0:Lcom/android/server/power/ShutdownThread;
 
     # getter for: Lcom/android/server/power/ShutdownThread;->mActionDoneSync:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$500(Lcom/android/server/power/ShutdownThread;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$600(Lcom/android/server/power/ShutdownThread;)Ljava/lang/Object;
 
     move-result-object v0
 

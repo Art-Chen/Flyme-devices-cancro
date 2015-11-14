@@ -18,6 +18,8 @@
     .end annotation
 .end field
 
+.field private static final DEFAULT_CAPABILITIES:J = 0xe000L
+
 .field private static final MAX_NET_CAPABILITY:I = 0x10
 
 .field private static final MAX_TRANSPORT:I = 0x4
@@ -59,6 +61,8 @@
 .field public static final NET_CAPABILITY_WIFI_P2P:I = 0x6
 
 .field public static final NET_CAPABILITY_XCAP:I = 0x9
+
+.field private static final RESTRICTED_CAPABILITIES:J = 0x7bcL
 
 .field public static final TRANSPORT_BLUETOOTH:I = 0x2
 
@@ -119,43 +123,30 @@
     .param p1, "nc"    # Landroid/net/NetworkCapabilities;
 
     .prologue
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
-    const-wide/32 v0, 0xe000
-
-    iput-wide v0, p0, Landroid/net/NetworkCapabilities;->mNetworkCapabilities:J
-
-    .line 43
     if-eqz p1, :cond_0
 
-    .line 44
     iget-wide v0, p1, Landroid/net/NetworkCapabilities;->mNetworkCapabilities:J
 
     iput-wide v0, p0, Landroid/net/NetworkCapabilities;->mNetworkCapabilities:J
 
-    .line 45
     iget-wide v0, p1, Landroid/net/NetworkCapabilities;->mTransportTypes:J
 
     iput-wide v0, p0, Landroid/net/NetworkCapabilities;->mTransportTypes:J
 
-    .line 46
     iget v0, p1, Landroid/net/NetworkCapabilities;->mLinkUpBandwidthKbps:I
 
     iput v0, p0, Landroid/net/NetworkCapabilities;->mLinkUpBandwidthKbps:I
 
-    .line 47
     iget v0, p1, Landroid/net/NetworkCapabilities;->mLinkDownBandwidthKbps:I
 
     iput v0, p0, Landroid/net/NetworkCapabilities;->mLinkDownBandwidthKbps:I
 
-    .line 48
     iget-object v0, p1, Landroid/net/NetworkCapabilities;->mNetworkSpecifier:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/NetworkCapabilities;->mNetworkSpecifier:Ljava/lang/String;
 
-    .line 50
     :cond_0
     return-void
 .end method
@@ -2086,5 +2077,39 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 552
+    return-void
+.end method
+
+.method public maybeMarkCapabilitiesRestricted()V
+    .locals 6
+
+    .prologue
+    const-wide/16 v4, 0x0
+
+    iget-wide v0, p0, Landroid/net/NetworkCapabilities;->mNetworkCapabilities:J
+
+    const-wide/32 v2, -0xe7bd
+
+    and-long/2addr v0, v2
+
+    cmp-long v0, v0, v4
+
+    if-nez v0, :cond_0
+
+    iget-wide v0, p0, Landroid/net/NetworkCapabilities;->mNetworkCapabilities:J
+
+    const-wide/16 v2, 0x7bc
+
+    and-long/2addr v0, v2
+
+    cmp-long v0, v0, v4
+
+    if-eqz v0, :cond_0
+
+    const/16 v0, 0xd
+
+    invoke-virtual {p0, v0}, Landroid/net/NetworkCapabilities;->removeCapability(I)Landroid/net/NetworkCapabilities;
+
+    :cond_0
     return-void
 .end method

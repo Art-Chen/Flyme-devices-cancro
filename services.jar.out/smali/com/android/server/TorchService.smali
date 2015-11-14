@@ -507,7 +507,7 @@
 
     iget-object v2, p0, Lcom/android/server/TorchService;->mContext:Landroid/content/Context;
 
-    const v3, 0x10400cf
+    const v3, #android:string@quick_settings_tile_flashlight_not_title#t
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -519,7 +519,7 @@
 
     iget-object v2, p0, Lcom/android/server/TorchService;->mContext:Landroid/content/Context;
 
-    const v3, 0x10400d0
+    const v3, #android:string@quick_settings_tile_flashlight_not_summary#t
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -541,7 +541,7 @@
 
     move-result-object v1
 
-    const v2, 0x108043c
+    const v2, #android:drawable@ic_signal_flashlight_disable#t
 
     invoke-virtual {v1, v2}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -1246,12 +1246,10 @@
 
     check-cast v2, Landroid/app/NotificationManager;
 
-    .line 147
     .local v2, "nm":Landroid/app/NotificationManager;
     if-eqz p1, :cond_0
 
-    .line 148
-    const v3, 0x10400cf
+    const v3, #android:string@quick_settings_tile_flashlight_not_title#t
 
     invoke-direct {p0}, Lcom/android/server/TorchService;->buildNotification()Landroid/app/Notification;
 
@@ -1270,7 +1268,7 @@
 
     .line 150
     :cond_0
-    const v3, 0x10400cf
+    const v3, #android:string@quick_settings_tile_flashlight_not_title#t
 
     :try_start_1
     invoke-virtual {v2, v3}, Landroid/app/NotificationManager;->cancel(I)V

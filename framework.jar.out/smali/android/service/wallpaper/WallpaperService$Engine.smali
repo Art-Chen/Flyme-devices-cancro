@@ -2216,7 +2216,7 @@
 
     move-result-object v2
 
-    const v3, 0x112008a
+    const v3, #android:bool@config_windowIsRound#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2301,7 +2301,7 @@
 
     iget-object v2, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    const v3, 0x10302e5
+    const v3, #android:style@Animation.Wallpaper#t
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

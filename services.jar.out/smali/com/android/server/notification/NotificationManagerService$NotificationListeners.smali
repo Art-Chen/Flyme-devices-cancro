@@ -615,43 +615,35 @@
     .locals 2
 
     .prologue
-    .line 3399
     new-instance v0, Lcom/android/server/notification/ManagedServices$Config;
 
     invoke-direct {v0}, Lcom/android/server/notification/ManagedServices$Config;-><init>()V
 
-    .line 3400
     .local v0, "c":Lcom/android/server/notification/ManagedServices$Config;
     const-string v1, "notification listener"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->caption:Ljava/lang/String;
 
-    .line 3401
     const-string v1, "android.service.notification.NotificationListenerService"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->serviceInterface:Ljava/lang/String;
 
-    .line 3402
     const-string v1, "enabled_notification_listeners"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->secureSettingName:Ljava/lang/String;
 
-    .line 3403
     const-string v1, "android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->bindPermission:Ljava/lang/String;
 
-    .line 3404
     const-string v1, "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"
 
     iput-object v1, v0, Lcom/android/server/notification/ManagedServices$Config;->settingsAction:Ljava/lang/String;
 
-    .line 3405
-    const v1, 0x1040623
+    const v1, #android:string@notification_listener_binding_label#t
 
     iput v1, v0, Lcom/android/server/notification/ManagedServices$Config;->clientLabel:I
 
-    .line 3406
     return-object v0
 .end method
 

@@ -348,7 +348,7 @@
 
     move-result-object v4
 
-    const v7, 0x1120085
+    const v7, #android:bool@config_useFixedVolume#t
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -712,7 +712,7 @@
 
     move-result-object v1
 
-    const v2, 0x10500ab
+    const v2, #android:dimen@global_actions_avatar_size#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -814,7 +814,7 @@
     .restart local v3    # "avatar":Landroid/graphics/drawable/Drawable;
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$7;
 
-    const v2, 0x1080384
+    const v2, #android:drawable@ic_lock_user#t
 
     iget-object v1, v5, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
@@ -834,7 +834,7 @@
     .line 619
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040035
+    const v2, #android:string@global_action_current_user#t
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1157,15 +1157,15 @@
     :goto_0
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$1;
 
-    const v2, 0x1080371
+    const v2, #android:drawable@ic_lock_airplane_mode#t
 
-    const v3, 0x1080373
+    const v3, #android:drawable@ic_lock_airplane_mode_off#t
 
-    const v4, 0x10401df
+    const v4, #android:string@global_actions_toggle_airplane_mode#t
 
-    const v5, 0x10401e0
+    const v5, #android:string@global_actions_airplane_mode_on_status#t
 
-    const v6, 0x10401e1
+    const v6, #android:string@global_actions_airplane_mode_off_status#t
 
     move-object v1, p0
 
@@ -1195,7 +1195,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070042
+    const v1, #android:array@config_globalActionsList#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1640,9 +1640,9 @@
     .line 463
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$4;
 
-    const v1, 0x1080375
+    const v1, #android:drawable@ic_lock_bugreport#t
 
-    const v2, 0x10401d9
+    const v2, #android:string@bugreport_title#t
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$4;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
@@ -1687,9 +1687,9 @@
     .line 541
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$6;
 
-    const v1, 0x108002f
+    const v1, #android:drawable@ic_lock_lock#t
 
-    const v2, 0x10401e3
+    const v2, #android:string@global_action_lockdown#t
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$6;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
@@ -1703,9 +1703,9 @@
     .line 445
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$3;
 
-    const v1, 0x1080381
+    const v1, #android:drawable@ic_lock_screenshot#t
 
-    const v2, 0x104001b
+    const v2, #android:string@global_action_screenshot#t
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$3;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
@@ -1719,9 +1719,9 @@
     .line 518
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$5;
 
-    const v1, 0x1080382
+    const v1, #android:drawable@ic_lock_settings#t
 
-    const v2, 0x10401e2
+    const v2, #android:string@global_action_settings#t
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/policy/impl/GlobalActions$5;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
@@ -1746,14 +1746,12 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mUiContext:Landroid/content/Context;
 
-    .line 235
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mUiContext:Landroid/content/Context;
 
-    const v1, 0x103013f
+    const v1, #android:style@Theme.DeviceDefault.Light.DarkActionBar#t
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->setTheme(I)V
 
-    .line 237
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mUiContext:Landroid/content/Context;
 

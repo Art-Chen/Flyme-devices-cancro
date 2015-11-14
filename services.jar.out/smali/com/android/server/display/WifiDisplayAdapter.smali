@@ -133,7 +133,7 @@
 
     move-result-object v0
 
-    const v1, 0x112007f
+    const v1, #android:bool@config_wifiDisplaySupportsProtectedBuffers#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

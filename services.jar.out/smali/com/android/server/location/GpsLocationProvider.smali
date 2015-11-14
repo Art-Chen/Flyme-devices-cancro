@@ -798,7 +798,7 @@
 
     move-result-object v0
 
-    const v1, 0x112009b
+    const v1, #android:bool@config_legacyGpsHAL#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -3859,7 +3859,7 @@
 
     move-result-object v6
 
-    const v7, 0x1070046
+    const v7, #android:array@config_gpsParameters#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

@@ -5481,7 +5481,7 @@
 
     move-result-object v6
 
-    const v7, 0x1120066
+    const v7, #android:bool@config_sms_utf8_support#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
 

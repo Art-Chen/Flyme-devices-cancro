@@ -900,7 +900,7 @@
 
     move-result-object v6
 
-    const v7, 0x1070044
+    const v7, #android:array@config_cdma_home_system#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -4914,7 +4914,7 @@
 
     move-result-object v4
 
-    const v22, 0x1120063
+    const v22, #android:bool@skip_restoring_network_selection#t
 
     move/from16 v0, v22
 
@@ -10026,7 +10026,7 @@
 
     move-result-object v27
 
-    const v28, 0x10401a0
+    const v28, #android:string@roamingTextSearching#t
 
     invoke-virtual/range {v27 .. v28}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -10728,7 +10728,7 @@
 
     move-result-object v8
 
-    const v9, 0x107004e
+    const v9, #android:array@config_cdma_international_roaming_indicators#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -11061,7 +11061,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040459
+    const v5, #android:string@lockscreen_carrier_default#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

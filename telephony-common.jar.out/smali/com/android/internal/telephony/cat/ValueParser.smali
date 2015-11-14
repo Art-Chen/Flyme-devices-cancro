@@ -125,7 +125,7 @@
 
     .line 302
     .local v4, "resource":Landroid/content/res/Resources;
-    const v7, 0x1120088
+    const v7, #android:bool@config_stkNoAlphaUsrCnf#t
 
     :try_start_1
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getBoolean(I)Z

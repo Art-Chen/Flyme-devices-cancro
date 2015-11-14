@@ -54,7 +54,7 @@
 
     .line 103
     .local v1, "nm":Landroid/app/NotificationManager;
-    const v4, 0x1040091
+    const v4, #android:string@theme_reset_notification_title#t
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -62,7 +62,7 @@
 
     .line 104
     .local v3, "title":Ljava/lang/String;
-    const v4, 0x1040092
+    const v4, #android:string@theme_reset_notification_body#t
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -106,7 +106,7 @@
 
     move-result-object v4
 
-    const v5, 0x1080078
+    const v5, #android:drawable@stat_notify_error#t
 
     invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

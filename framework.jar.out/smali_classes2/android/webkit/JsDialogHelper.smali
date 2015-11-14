@@ -177,18 +177,15 @@
 
     if-eqz v2, :cond_0
 
-    .line 164
-    const v2, 0x10404b4
+    const v2, #android:string@js_dialog_title_default#t
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 175
     :goto_0
     return-object v1
 
-    .line 167
     :cond_0
     :try_start_0
     new-instance v0, Ljava/net/URL;
@@ -199,7 +196,7 @@
 
     .line 169
     .local v0, "alertUrl":Ljava/net/URL;
-    const v2, 0x10404b3
+    const v2, #android:string@js_dialog_title#t
 
     const/4 v3, 0x1
 
@@ -409,16 +406,14 @@
 
     if-ne v7, v8, :cond_2
 
-    .line 99
-    const v7, 0x10404b5
+    const v7, #android:string@js_dialog_before_unload_title#t
 
     invoke-virtual {p1, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 100
     .local v5, "title":Ljava/lang/String;
-    const v7, 0x10404b8
+    const v7, #android:string@js_dialog_before_unload#t
 
     new-array v8, v12, [Ljava/lang/Object;
 
@@ -432,69 +427,57 @@
 
     move-result-object v1
 
-    .line 102
     .local v1, "displayMessage":Ljava/lang/String;
-    const v4, 0x10404b6
+    const v4, #android:string@js_dialog_before_unload_positive_button#t
 
-    .line 103
     .local v4, "positiveTextId":I
-    const v3, 0x10404b7
+    const v3, #android:string@js_dialog_before_unload_negative_button#t
 
-    .line 110
     .local v3, "negativeTextId":I
     :goto_1
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 111
     .local v0, "builder":Landroid/app/AlertDialog$Builder;
     invoke-virtual {v0, v5}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 112
     new-instance v7, Landroid/webkit/JsDialogHelper$CancelListener;
 
     invoke-direct {v7, p0, v11}, Landroid/webkit/JsDialogHelper$CancelListener;-><init>(Landroid/webkit/JsDialogHelper;Landroid/webkit/JsDialogHelper$1;)V
 
     invoke-virtual {v0, v7}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 113
     iget v7, p0, Landroid/webkit/JsDialogHelper;->mType:I
 
     const/4 v8, 0x3
 
     if-eq v7, v8, :cond_3
 
-    .line 114
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 115
     new-instance v7, Landroid/webkit/JsDialogHelper$PositiveListener;
 
     invoke-direct {v7, p0, v11}, Landroid/webkit/JsDialogHelper$PositiveListener;-><init>(Landroid/webkit/JsDialogHelper;Landroid/widget/EditText;)V
 
     invoke-virtual {v0, v4, v7}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 125
     :goto_2
     iget v7, p0, Landroid/webkit/JsDialogHelper;->mType:I
 
     if-eq v7, v12, :cond_1
 
-    .line 126
     new-instance v7, Landroid/webkit/JsDialogHelper$CancelListener;
 
     invoke-direct {v7, p0, v11}, Landroid/webkit/JsDialogHelper$CancelListener;-><init>(Landroid/webkit/JsDialogHelper;Landroid/webkit/JsDialogHelper$1;)V
 
     invoke-virtual {v0, v3, v7}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 128
     :cond_1
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     goto :goto_0
 
-    .line 105
     .end local v0    # "builder":Landroid/app/AlertDialog$Builder;
     .end local v1    # "displayMessage":Ljava/lang/String;
     .end local v3    # "negativeTextId":I
@@ -505,29 +488,25 @@
 
     move-result-object v5
 
-    .line 106
     .restart local v5    # "title":Ljava/lang/String;
     iget-object v1, p0, Landroid/webkit/JsDialogHelper;->mMessage:Ljava/lang/String;
 
-    .line 107
     .restart local v1    # "displayMessage":Ljava/lang/String;
-    const v4, 0x104000a
+    const v4, #android:string@ok#t
 
-    .line 108
     .restart local v4    # "positiveTextId":I
-    const/high16 v3, 0x1040000
+    const/high16 v3, #android:string@cancel#i
 
     .restart local v3    # "negativeTextId":I
     goto :goto_1
 
-    .line 117
     .restart local v0    # "builder":Landroid/app/AlertDialog$Builder;
     :cond_3
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v7
 
-    const v8, 0x109005f
+    const v8, #android:layout@js_prompt#t
 
     invoke-virtual {v7, v8, v11}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -535,7 +514,7 @@
 
     .line 119
     .local v6, "view":Landroid/view/View;
-    const v7, 0x1020317
+    const v7, #android:id@value#t
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -543,21 +522,18 @@
 
     check-cast v2, Landroid/widget/EditText;
 
-    .line 120
     .local v2, "edit":Landroid/widget/EditText;
     iget-object v7, p0, Landroid/webkit/JsDialogHelper;->mDefaultValue:Ljava/lang/String;
 
     invoke-virtual {v2, v7}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 121
     new-instance v7, Landroid/webkit/JsDialogHelper$PositiveListener;
 
     invoke-direct {v7, p0, v2}, Landroid/webkit/JsDialogHelper$PositiveListener;-><init>(Landroid/webkit/JsDialogHelper;Landroid/widget/EditText;)V
 
     invoke-virtual {v0, v4, v7}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 122
-    const v7, 0x102000b
+    const v7, #android:id@message#t
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

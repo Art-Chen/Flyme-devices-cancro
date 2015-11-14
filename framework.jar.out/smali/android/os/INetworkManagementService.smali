@@ -122,14 +122,6 @@
     .end annotation
 .end method
 
-.method public abstract createPhysicalNetwork(I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract createVirtualNetwork(IZZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -675,6 +667,22 @@
 .end method
 
 .method public abstract wifiFirmwareReload(Ljava/lang/String;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract createPhysicalNetwork(ILjava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setNetworkPermission(ILjava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

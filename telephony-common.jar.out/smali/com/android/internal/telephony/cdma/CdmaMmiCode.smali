@@ -143,7 +143,7 @@
     .line 295
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040171
+    const v1, #android:string@PinMmi#t
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -375,9 +375,9 @@
     .param p2, "ar"    # Landroid/os/AsyncResult;
 
     .prologue
-    const v5, 0x104015f
+    const v5, #android:string@badPin#t
 
-    const v4, 0x1040156
+    const v4, #android:string@mmiError#t
 
     .line 304
     new-instance v2, Ljava/lang/StringBuilder;
@@ -460,7 +460,7 @@
     :cond_0
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040160
+    const v4, #android:string@badPuk#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -551,7 +551,7 @@
 
     move-result-object v3
 
-    const/high16 v4, 0x1140000
+    const/high16 v4, #android:plurals@pinpuk_attempts#i
 
     const/4 v5, 0x1
 
@@ -578,7 +578,7 @@
     :cond_4
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v4, 0x104015d
+    const v4, #android:string@passwordIncorrect#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -611,7 +611,7 @@
     .line 342
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040165
+    const v4, #android:string@needPuk2#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -641,7 +641,7 @@
     .line 346
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040166
+    const v4, #android:string@enablePin#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -692,7 +692,7 @@
     .line 358
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v4, 0x104015b
+    const v4, #android:string@serviceRegistered#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -989,12 +989,10 @@
 
     if-nez v4, :cond_1
 
-    .line 227
-    const v4, 0x1040161
+    const v4, #android:string@mismatchPin#t
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->handlePasswordError(I)V
 
-    .line 267
     .end local v1    # "newPinOrPuk":Ljava/lang/String;
     .end local v2    # "oldPinOrPuk":Ljava/lang/String;
     .end local v3    # "pinLen":I
@@ -1017,7 +1015,7 @@
 
     .line 230
     :cond_2
-    const v4, 0x1040162
+    const v4, #android:string@invalidPin#t
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->handlePasswordError(I)V
     :try_end_0
@@ -1041,7 +1039,7 @@
     .line 264
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040156
+    const v5, #android:string@mmiError#t
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1087,20 +1085,17 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 235
-    const v4, 0x1040164
+    const v4, #android:string@needPuk#t
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->handlePasswordError(I)V
 
     goto :goto_0
 
-    .line 236
     :cond_4
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
     if-eqz v4, :cond_9
 
-    .line 237
     const-string v4, "CdmaMmiCode"
 
     new-instance v5, Ljava/lang/StringBuilder;
