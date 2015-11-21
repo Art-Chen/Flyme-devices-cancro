@@ -1,4 +1,48 @@
 ===================================
+Since Thu Nov 19 10:43:55 UTC 2015
+===================================
+
+   * frameworks/base
+e49d5ea Recents: Fix IndexOutOfBoundsException
+
+===================================
+Since Wed Nov 18 06:30:22 UTC 2015
+===================================
+
+   * frameworks/base
+ed834ca Shell: Declare cyanogenmod WRITE for system and secure settings.
+efb9ba7 Listen phone state change
+
+   * frameworks/opt/telephony
+2057518 Fix default network mode reset on sim1
+
+   * packages/apps/Dialer
+386fc09 dialer: fix fc on secundary users
+
+   * packages/services/Telecomm
+15679e2 Telecomm: Fix crash for SIP on dual sims device
+e08bab3 - Fix SIP soft-reboot on call
+
+===================================
+Since Sat Nov 14 01:45:11 UTC 2015
+===================================
+
+   * build
+1395703 gdbclient: fix build output directory path
+
+   * packages/apps/ContactsCommon
+8ace389 Fix contact JSON record parsing.
+
+   * packages/apps/Settings
+ff01cb1 Settings: regulatory: Wrap the layout in a ScrollView
+
+   * packages/apps/Trebuchet
+1c46bab Live Settings: always rebuild DynamicGrid
+
+   * vendor/cm
+e5b8b5a cm: make cgroups files read-only for all users
+
+===================================
 Since Thu Nov 12 01:29:45 UTC 2015
 ===================================
 
@@ -24,54 +68,4 @@ c69b9d1 EAP-pwd server: Fix last fragment length validation
 
    * system/extras/su
 ee9de09 Merge "replace insecure uid spoofing code" into cm-12.1
-
-===================================
-Since Tue Nov 10 00:57:37 UTC 2015
-===================================
-
-   * device/xiaomi/cancro
-3194ed1 cancro: camerawrapper: better zsl handling
-
-   * frameworks/opt/telephony
-aea6eb3 [DO NOT MERGE] Harmlessly (?) fixes LOD on Sprint and Verizon (?) via Fallback
-
-   * kernel/xiaomi/cancro
-c364611 wlan: Address buffer overflow due to invalid length
-
-   * packages/apps/Settings
-50fed8b Settings: add opt out stats event
-
-   * vendor/cmsdk
-0c0aef6 CMSettings: add reporting status setting
-
-===================================
-Since Mon Nov  9 00:09:25 UTC 2015
-===================================
-
-   * packages/providers/ThemesProvider
-2f386fc Fix applied previews query when component doesn't exist
-
-   * system/extras/su
-860479b replace insecure uid spoofing code
-1e7b152 daemon: Validate the socket caller's requested FDs
-
-   * system/vold
-314f910 vold: add opt-out for exFAT
-
-   * vendor/cm
-675f474 cm: add opt-out for exFAT
-
-   * prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9
-f22f062 Add NOTICE and MODULE_LICENSE files.
-3122899 Revert "Revert "Update prebuilt gold for --pic-veneer option.""
-
-===================================
-Since Sat Nov  7 01:21:05 UTC 2015
-===================================
-
-   * packages/apps/Settings
-c2ca831 Settings: Add security level default string
-
-   * system/extras/su
-4f4cd57 su: Remove dead code
 

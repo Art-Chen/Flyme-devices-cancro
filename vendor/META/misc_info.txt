@@ -1,10 +1,10 @@
 recovery_api_version=3
 fstab_version=1
-blocksize=0xffffffff
-boot_size=0x800000
-recovery_size=0x800000
-system_size=0x50000000
-userdata_size=0x40100000
+blocksize=131072
+boot_size=16384000
+recovery_size=16384000
+system_size=671088640
+userdata_size=13291503000
 extfs_sparse_flag=-s
 tool_extensions=.
 default_system_dev_certificate=build/security/testkey

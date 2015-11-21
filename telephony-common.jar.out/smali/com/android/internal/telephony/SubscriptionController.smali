@@ -2312,7 +2312,7 @@
 
     sget-object v13, Landroid/telephony/TelephonyManager$MultiSimVariants;->DSDS:Landroid/telephony/TelephonyManager$MultiSimVariants;
 
-    if-ne v12, v13, :cond_2
+    if-ne v12, v13, :cond_3
 
     move v1, v10
 
@@ -2347,7 +2347,7 @@
 
     .local v7, "phoneId":I
     :goto_2
-    if-ge v7, v3, :cond_4
+    if-ge v7, v3, :cond_5
 
     sget-object v10, Lcom/android/internal/telephony/SubscriptionController;->sProxyPhones:[Lcom/android/internal/telephony/PhoneProxy;
 
@@ -2359,12 +2359,21 @@
     move-result v0
 
     .local v0, "id":I
-    if-ne v0, p1, :cond_3
+    if-ne v0, p1, :cond_4
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/SubscriptionController;->getUserNwMode(I)I
 
     move-result v4
 
+    const/4 v10, -0x1
+
+    if-ne v4, v10, :cond_2
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/SubscriptionController;->getNwMode(I)I
+
+    move-result v4
+
+    :cond_2
     move v8, v7
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -2411,7 +2420,7 @@
     .end local v7    # "phoneId":I
     .end local v8    # "phoneId1":I
     .end local v9    # "phoneId2":I
-    :cond_2
+    :cond_3
     move v1, v11
 
     goto :goto_1
@@ -2425,7 +2434,7 @@
     .restart local v7    # "phoneId":I
     .restart local v8    # "phoneId1":I
     .restart local v9    # "phoneId2":I
-    :cond_3
+    :cond_4
     move v9, v7
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -2462,7 +2471,7 @@
 
     .end local v0    # "id":I
     .end local v6    # "phone":Lcom/android/internal/telephony/PhoneProxy;
-    :cond_4
+    :cond_5
     iget-object v10, p0, Lcom/android/internal/telephony/SubscriptionController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v10}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;

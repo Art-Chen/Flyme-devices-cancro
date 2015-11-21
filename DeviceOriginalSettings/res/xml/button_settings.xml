@@ -51,4 +51,11 @@
         <ListPreference android:persistent="false" android:entries="@array/volbtn_cursor_control_entries" android:title="@string/volbtn_cursor_control_title" android:key="volume_key_cursor_control" android:dialogTitle="@string/volbtn_cursor_control_title" android:entryValues="@array/volbtn_cursor_control_values" />
         <SwitchPreference android:title="@string/swap_volume_buttons_title" android:key="swap_volume_buttons" android:summary="@string/swap_volume_buttons_summary" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pointer_settings_category" android:key="pointer_settings_category">
+        <com.flyme.deviceoriginalsettings.PointerSpeedPreference android:title="@string/pointer_speed" android:key="pointer_speed" android:dialogTitle="@string/pointer_speed" />
+        <SwitchPreference android:title="@string/high_touch_sensitivity_title" android:key="high_touch_sensitivity" android:summary="@string/high_touch_sensitivity_summary" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/debug_applications_category" android:key="debug_applications_category">
+        <SwitchPreference android:title="@string/kill_app_longpress_back" android:key="kill_app_longpress_back" android:summary="@string/kill_app_longpress_back_summary" />
+    </PreferenceCategory>
 </PreferenceScreen>

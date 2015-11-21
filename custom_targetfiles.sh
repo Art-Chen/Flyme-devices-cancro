@@ -2,6 +2,7 @@ echo "in $0"
 #Author = Art_Chen
 OUT_DIR=/home/andy/flyme/lollipop-5.0/devices/cancro/out/merged_target_files
 #FLYME_DIR=$OUT_DIR/DATA/media/flyme
+DEV_DIR=/home/andy/flyme/lollipop-5.0/devices/cancro
 
 cd $OUT_DIR
 echo "Delete $OUT_DIR/DATA"
@@ -25,4 +26,11 @@ mv -vf $OUT_DIR/SYSTEM/app/IflytekSpeechService/ $OUT_DIR/DATA/sys-priv-app/
 mv -vf $OUT_DIR/SYSTEM/priv-app/* $OUT_DIR/DATA/sys-priv-app
 echo "move system font into data"
 mv -vf $OUT_DIR/SYSTEM/fonts/ $OUT_DIR/DATA/sys-fonts
-
+echo "overlay"
+#cp -vrf $DEV_DIR/overlay/data/app $OUT_DIR/DATA/app
+echo "remove Nfc"
+rm -rf $OUT_DIR/SYSTEM/app/NfcNci
+rm -rf $OUT_DIR/SYSTEM/priv-app/Tag
+rm -rf $OUT_DIR/SYSTEM/lib/*nfc*
+rm -rf $OUT_DIR/SYSTEM/etc/*nfc*
+rm -rf $OUT_DIR/SYSTEM/etc/permissions/*nfc*

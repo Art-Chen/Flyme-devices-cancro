@@ -56,7 +56,7 @@ vendor_modify_images := boot
 #-----------------------------------------------------------------------------
 vendor_saved_apps := Bluetooth KeyChain HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
                      FusedLocation PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
-                     ProxyHandler Shell DefaultContainerService QuickBoot
+                     ProxyHandler Shell DefaultContainerService
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -141,7 +141,8 @@ board_modify_apps := TeleService Keyguard SystemUI Telecom FlymeLauncher MmsServ
 # You should configure the property according to your device and your ID with replace the "Nexus-5_Unofficial".
 override_property += \
     ro.flyme.romer=Art_Chen \
-    ro.product.model_romer=MI-3W/C_Art_Chen
+    ro.product.model_romer=MI-3W/C_Art_Chen \
+    ro.product.device=cancro
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
