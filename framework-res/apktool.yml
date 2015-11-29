@@ -8,6 +8,6 @@ packageInfo:
   forced-package-id: '1'
 versionInfo:
   versionCode: '22'
-  versionName: 5.1.1-6161a7131b
+  versionName: 5.1.1-e5250a42e9
 compressionType: false
 sharedLibrary: false

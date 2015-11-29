@@ -1,71 +1,184 @@
 ===================================
-Since Thu Nov 19 10:43:55 UTC 2015
+Since Thu Nov 26 07:56:17 UTC 2015
 ===================================
+
+   * external/whispersystems/WhisperPush
+6c9e071 Automatic translation import
 
    * frameworks/base
-e49d5ea Recents: Fix IndexOutOfBoundsException
+fd51970 Automatic translation import
 
-===================================
-Since Wed Nov 18 06:30:22 UTC 2015
-===================================
+   * packages/apps/AudioFX
+f4202d9 Automatic translation import
 
-   * frameworks/base
-ed834ca Shell: Declare cyanogenmod WRITE for system and secure settings.
-efb9ba7 Listen phone state change
+   * packages/apps/Bluetooth
+16a0a59 Automatic translation import
 
-   * frameworks/opt/telephony
-2057518 Fix default network mode reset on sim1
+   * packages/apps/BluetoothExt
+a989410 Automatic translation import
+
+   * packages/apps/CMAccount
+ffa5551 Automatic translation import
+
+   * packages/apps/CMBugReport
+56d3846 Automatic translation import
+
+   * packages/apps/CMFileManager
+4d187b0 Automatic translation import
+
+   * packages/apps/CMUpdater
+527e699 Automatic translation import
+
+   * packages/apps/CMWallpapers
+83ff47a Automatic translation import
+
+   * packages/apps/Calculator
+28b610e Automatic translation import
+
+   * packages/apps/Calendar
+e35fc79 Automatic translation import
+
+   * packages/apps/Camera2
+44584d8 Automatic translation import
+
+   * packages/apps/CellBroadcastReceiver
+0f22a23 Automatic translation import
+
+   * packages/apps/Contacts
+aee0a2f Automatic translation import
+
+   * packages/apps/ContactsCommon
+af25a24 Automatic translation import
+
+   * packages/apps/DeskClock
+4ac2ef0 Automatic translation import
 
    * packages/apps/Dialer
-386fc09 dialer: fix fc on secundary users
+2c80a61 Automatic translation import
+
+   * packages/apps/Eleven
+0a6a663 Automatic translation import
+
+   * packages/apps/Email
+eea9a9b Automatic translation import
+
+   * packages/apps/Gallery2
+576b59f Automatic translation import
+
+   * packages/apps/InCallUI
+724b906 Automatic translation import
+
+   * packages/apps/LockClock
+a4937a2 Automatic translation import
+
+   * packages/apps/Mms
+c976da8 Automatic translation import
+
+   * packages/apps/PhoneCommon
+b00b94d Automatic translation import
+
+   * packages/apps/Settings
+db5ca86 Automatic translation import
+
+   * packages/apps/SetupWizard
+ce01418 Automatic translation import
+
+   * packages/apps/SoundRecorder
+58e4313 Automatic translation import
+
+   * packages/apps/Stk
+d9e00fb Automatic translation import
+
+   * packages/apps/Terminal
+5912e1a Automatic translation import
+
+   * packages/apps/ThemeChooser
+eea3c15 Automatic translation import
+
+   * packages/apps/Trebuchet
+39dc7a8 Automatic translation import
+
+   * packages/apps/TvSettings
+7ea059f Automatic translation import
+
+   * packages/apps/UnifiedEmail
+65793f1 Automatic translation import
+
+   * packages/inputmethods/LatinIME
+8cd1ec6 Automatic translation import
+
+   * packages/providers/DownloadProvider
+c57fa08 Automatic translation import
+
+   * packages/providers/ThemesProvider
+ea3af8d Automatic translation import
+
+   * packages/services/Mms
+be1f336 Automatic translation import
 
    * packages/services/Telecomm
-15679e2 Telecomm: Fix crash for SIP on dual sims device
-e08bab3 - Fix SIP soft-reboot on call
+0f6914b Automatic translation import
+
+   * packages/services/Telephony
+89e62ed Automatic translation import
+
+   * packages/wallpapers/Galaxy4
+e0b8665 Automatic translation import
+
+   * packages/wallpapers/PhotoPhase
+f9a0023 Automatic translation import
+
+   * vendor/cmsdk
+5331d13 Automatic translation import
 
 ===================================
-Since Sat Nov 14 01:45:11 UTC 2015
+Since Wed Nov 25 03:39:57 UTC 2015
+===================================
+
+   * frameworks/base
+62059d9 ZenMode : Update defaults for CTSVerifier
+
+   * packages/apps/Settings
+ee71fe5 Settings: Listen to preferapn changes via observer.
+
+===================================
+Since Tue Nov 24 03:11:35 UTC 2015
 ===================================
 
    * build
-1395703 gdbclient: fix build output directory path
-
-   * packages/apps/ContactsCommon
-8ace389 Fix contact JSON record parsing.
-
-   * packages/apps/Settings
-ff01cb1 Settings: regulatory: Wrap the layout in a ScrollView
-
-   * packages/apps/Trebuchet
-1c46bab Live Settings: always rebuild DynamicGrid
-
-   * vendor/cm
-e5b8b5a cm: make cgroups files read-only for all users
+531e203 Revert "Apply correct, optimized mfpu compiler flag for ARMv7-A Cortex CPUs"
+60ca2b7 kernel: add `make kernelxconfig' target
 
 ===================================
-Since Thu Nov 12 01:29:45 UTC 2015
+Since Sat Nov 21 13:00:56 UTC 2015
 ===================================
 
-   * bootable/recovery
-c9b1143 recovery: add opt-out of exFAT
+   * external/libnetfilter_conntrack
+78f8a86 Fix build breaks on L
 
-   * system/vold
-336f513 cryptfs: Unbreak hardware-backed pattern lock + encryption
+   * packages/apps/CMBugReport
+a6f67a6 Increase timeout on upload
+
+   * packages/apps/Camera2
+3cc0f8b Fix writing to external storage.
+
+   * packages/apps/Dialer
+b159add Remove duplicate permission "android.permission.INTERACT_ACROSS_USERS"
+5fbf6ec Add people and reverse lookup provider "Auskunft" (AT).
+
+   * packages/services/Telecomm
+87c8bd7 Fix getAllPhoneAccounts() returning no accounts.
 
 ===================================
-Since Wed Nov 11 01:01:08 UTC 2015
+Since Fri Nov 20 10:26:17 UTC 2015
 ===================================
 
-   * external/wpa_supplicant_8
-9ec7ddc NFC: Fix payload length validation in NDEF record parser
-47b5051 WNM: Ignore Key Data in WNM Sleep Mode Response frame if no PMF in use
-bac9fa8 EAP-pwd peer: Fix last fragment length validation
-c69b9d1 EAP-pwd server: Fix last fragment length validation
-6a51515 EAP-pwd peer: Fix error path for unexpected Confirm message
+   * frameworks/opt/chips
+778bda8 Fix plus sign on number dropdown
 
-   * frameworks/opt/telephony
-7df85d5 telephony: use phoneaccounts to determine voiceprompt status
+   * packages/apps/Dialer
+4395a7e Remove usage legacy HTTP Client
 
-   * system/extras/su
-ee9de09 Merge "replace insecure uid spoofing code" into cm-12.1
+   * packages/services/Telephony
+153e645 PhoneToggler: use current phone with data to toggle network modes
 

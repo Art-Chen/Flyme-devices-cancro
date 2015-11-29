@@ -140,6 +140,8 @@
     <string name="perf_profile_pwrsv">Oszczędny</string>
     <string name="perf_profile_bal">Zbalansowany</string>
     <string name="perf_profile_perf">Wydajność</string>
+    <string name="perf_profile_bias_power">Oszczędny</string>
+    <string name="perf_profile_bias_perf">Wydajny</string>
     <string name="theme_install_error_title">Nie udało się zainstalować motywu</string>
     <string name="theme_install_error_message">%s nie udało się zainstalować</string>
     <string name="theme_reset_notification_title">Reset motywu</string>
@@ -215,6 +217,8 @@
     <string name="silent_mode_none">Brak</string>
     <string name="subscription_change_disabled_wifi_ap">Wyłączono hotspot WiFi z powodu zmiany karty SIM</string>
     <string name="notify_turn_wifi_off_title">Wyłącz Wi-Fi</string>
+    <string name="permlab_thirdPartyKeyguard">blokada ekranu zewnętrznego dostawcy</string>
+    <string name="permdesc_thirdPartyKeyguard">Pozwala na wykorzystanie aplikacji jako niezabezpieczonego ekranu blokady.</string>
     <string name="numeric_date_template" formatted="false">%s.%s.%s</string>
     <string name="month_day_year" formatted="false">%-e %B %Y</string>
     <string name="time_of_day" formatted="false">%H:%M:%S</string>

@@ -1,8 +1,8 @@
 echo "in $0"
 #Author = Art_Chen
-OUT_DIR=/home/andy/flyme/lollipop-5.0/devices/cancro/out/merged_target_files
+OUT_DIR=/home/andy/flyme/lollipop/devices/cancro/out/merged_target_files
 #FLYME_DIR=$OUT_DIR/DATA/media/flyme
-DEV_DIR=/home/andy/flyme/lollipop-5.0/devices/cancro
+DEV_DIR=/home/andy/flyme/lollipop/devices/cancro
 
 cd $OUT_DIR
 echo "Delete $OUT_DIR/DATA"
